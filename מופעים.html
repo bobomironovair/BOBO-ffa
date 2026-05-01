@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>מופעים - Bobo FFA</title>
+    <link rel="stylesheet" href="מופעים.css">
+    <link rel="canonical" href="http://www.boboffa.com">
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="Cataction.html" class="logo-link">
+            <img src="Screenshot 2026-03-14 135433.png" alt="Bobo FFA Logo" class="logo-img">
+        </a>
+        <a href="סרטי חתולים.html" class="nav-link">סרטים</a>
+        <a href="מופעים.html" class="nav-link">מופעים</a>
+        <a href="שיתופי פעולה.html" class="nav-link">שיתופי פעולה</a>
+        <a href="סרטוני טיולים.html" class="nav-link">טיולים</a>
+        <a href="playlists.html" class="nav-link">פלייליסטים</a>
+    </nav>
+    <header>
+        <div class="container">
+            <h1>Bobo FFA - מופעים</h1>
+            <p class="tagline">Fine Funniest Animation</p>
+        </div>
+    </header>
+    <main class="container">
+        <section class="video-card">
+            <h2>מופע מרכזי: הפרעת קצב</h2>
+            <p class="watch-text">⏯ לחץ כאן לצפייה בסרטון</p>
+            <div class="video-wrapper">
+                <video id="video1" controls>
+                    <source src="הפרעת קצב - המופע הראשון 26.09.2024.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+            <div class="controls">
+                <button onclick="playVideo('video1')">▶ Play</button>
+                <button onclick="pauseVideo('video1')">⏸ Pause</button>
+                <button onclick="stopVideo('video1')">⏹ Stop</button>
+                <button id="likeBtnShows1" onclick="toggleLike('likeBtnShows1')" class="like-button">👍 Like</button>
+            </div>
+        </section>
+        <section class="video-card">
+            <h2>מופע מרכזי: הפרעת קצב - מופע 2</h2>
+            <p class="watch-text">⏯ לחץ כאן לצפייה בסרטון</p>
+            <div class="video-wrapper">
+                <video id="video2" controls>
+                    <source src="הפרעת קצב - המופע השני 26.12.2024.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+            <div class="controls">
+                <button onclick="playVideo('video2')">▶ Play</button>
+                <button onclick="pauseVideo('video2')">⏸ Pause</button>
+                <button onclick="stopVideo('video2')">⏹ Stop</button>
+                <button id="likeBtnShows2" onclick="toggleLike('likeBtnShows2')" class="like-button">👍 Like</button>
+            </div>
+        </section>
+        השירים בפלייליסטים שלנו זמינים גם ב-YouTube Music! <a href="playlist.html" class="btn">צפייה בפלייליסטים</a>
+    </main>
+    <footer>
+        <p>&copy; 2026 Bobo FFA - All Cats Reserved</p>
+    </footer>
+    <script src="Cataction.js"></script>
+</body>
+</html>

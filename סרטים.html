@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>סרטים - Bobo FFA</title>
+    <link rel="stylesheet" href="סרטים.css">
+    <link rel="canonical" href="http://www.boboffa.com">
+    <!-- Consider moving body styles to סרטים.css -->
+    <!-- <style>
+        body {
+            font-family: 'secular one', sans-serif;
+            background-color: #4800ff;
+            margin: 0;
+            padding: 20px;
+        }
+    </style> -->
+</head>
+<body>
+    <div class="logo">
+        <img src="Screenshot 2026-03-14 135433.png" alt="Bobo FFA Logo">
+    </div>
+    <nav class="main-nav">
+        <a href="Cataction.html" class="nav-link">חזור לדף הבית</a>
+        <a href="סרטי חתולים.html" class="nav-link">סרטים</a>
+        <a href="מופעים.html" class="nav-link">מופעים</a>
+        <a href="שיתופי פעולה.html" class="nav-link">שיתופי פעולה</a>
+        <a href="סרטוני טיולים.html" class="nav-link">טיולים</a>
+        <a href="playlists.html" class="nav-link">פלייליסטים</a>
+    </nav>
+    <header>
+        <div class="container">
+            <h1>Bobo FFA - סרטים</h1>
+            <p class="tagline">Fine Funniest Animation</p>
+        </div>
+    </header>
+    <main class="container">
+        <section class="video-card">
+            <h2>סרטי קולנוע: סרט חתולים 1</h2>
+            <p class="watch-text">⏯ לחץ כאן לצפייה בסרטון</p>
+            <div class="video-wrapper">
+                <video id="video1" controls poster="cataction 2.png">
+                    <source src="Cataction.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+            <div class="controls">
+                <button onclick="playVideo('video1')">▶ Play</button>
+                <button onclick="pauseVideo('video1')">⏸ Pause</button>
+                <button onclick="stopVideo('video1')">⏹ Stop</button>
+            </div>
+        </section>
+        <section class="video-card">
+            <h2>סרטי קולנוע: סרט חתולים 2</h2>
+            <p class="watch-text">⏯ לחץ כאן לצפייה בסרטון</p>
+            <div class="video-wrapper">
+                <video id="video2" controls poster="Cataction 2 photo.png">
+                    <source src="Cataction 2.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+            <div class="controls">
+                <button onclick="playVideo('video2')">▶ Play</button>
+                <button onclick="pauseVideo('video2')">⏸ Pause</button>
+                <button onclick="stopVideo('video2')">⏹ Stop</button>
+            </div>
+        </section>
+        <section class="video-card">
+            <h2>סרט קולנוע 3</h2>
+            <p class="watch-text">⏯ לחץ כאן לצפייה בסרטון</p>
+            <div class="video-wrapper">
+                <video id="video3" controls poster="Cataction 3 - The Poster.png">
+                    <source src="Cataction 3.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+            <div class="controls">
+                <button onclick="playVideo('video3')">▶ Play</button>
+                <button onclick="pauseVideo('video3')">⏸ Pause</button>
+                <button onclick="stopVideo('video3')">⏹ Stop</button>
+            </div>
+        </section>
+        <section class="video-card">
+            <h2>סרט קולנוע 4</h2>
+            <p class="watch-text">⏯ לחץ כאן לצפייה בסרטון</p>
+            <div class="video-wrapper">
+                <video id="video4" controls poster="Cataction 4.png">
+                    <source src="Cataction 4.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+            <div class="controls">
+                <button onclick="playVideo('video4')">▶ Play</button>
+                <button onclick="pauseVideo('video4')">⏸ Pause</button>
+                <button onclick="stopVideo('video4')">⏹ Stop</button>
+            </div>
+        </section>
+        <section class="video-card">
+            <h2>סרט קולנוע 5</h2>
+            <p class="watch-text">⏯ לחץ כאן לצפייה בסרטון</p>
+            <div class="video-wrapper">
+                <video id="video5" controls poster="Cataction 5 - The Poster.png">
+                    <source src="Cataction 5.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+            <div class="controls">
+                <button onclick="playVideo('video5')">▶ Play</button>
+                <button onclick="pauseVideo('video5')">⏸ Pause</button>
+                <button onclick="stopVideo('video5')">⏹ Stop</button>
+            </div>
+        </section>
+    </main>
+    <script>
+        function playVideo(videoId) {
+            document.getElementById(videoId).play();
+        }
+
+        function pauseVideo(videoId) {
+            document.getElementById(videoId).pause();
+        }
+
+        function stopVideo(videoId) {
+            document.getElementById(videoId).pause();
+            document.getElementById(videoId).currentTime = 0;
+        }
+    </script>
+    <canvas id="backgroundCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('backgroundCanvas');
+        const ctx = canvas.getContext('2d');
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        function drawBackground() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const y = Math.random() * canvas.height;
+            const size = 30 + Math.random() * 50;
+            ctx.fillStyle = `rgba(255, 105, 180, ${Math.random()})`;
+            ctx.beginPath();
+            ctx.arc(x, y, size / 2, 0, Math.PI * 2);
+            ctx.fill();
+        }
+            const x = Math.random() * canvas.width;</script>
+    <footer>
+        <p>&copy; 2026 Bobo FFA - All Cats Reserved</p>
+    </footer>
+    <script src="Cataction.js"></script>
+</body>
+</html>

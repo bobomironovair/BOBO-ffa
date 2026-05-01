@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Playlists - Bobo FFA</title>
+    <link rel="stylesheet" href="playlists.css">
+    <link rel="canonical" href="http://www.boboffa.com">
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="Cataction.html" class="logo-link">
+            <img src="Screenshot 2026-03-14 135433.png" alt="Bobo FFA Logo" class="logo-img">
+        </a>
+        <a href="סרטי חתולים.html" class="nav-link">סרטים</a>
+        <a href="מופעים.html" class="nav-link">מופעים</a>
+        <a href="שיתופי פעולה.html" class="nav-link">שיתופי פעולה</a>
+        <a href="סרטוני טיולים.html" class="nav-link">טיולים</a>
+        <a href="playlists.html" class="nav-link">פלייליסטים</a>
+    </nav>
+    <header>
+        <div class="container">
+            <h1>Playlists - Bobo FFA</h1>
+            <p class="tagline">Fine Funniest Animation Music Collection</p>
+        </div>
+    </header>
+    <main class="container">
+        <div class="content-grid">
+            <div class="card" data-playlist="PLG5S1cXoV-2HbSsULpHuwQKLvvD6hkRev">
+                <div class="wallpaper"></div>
+                <div class="card-content">
+                    <h3>Playlist 1 (2024-2025)</h3>
+                    <p>הפלייליסט הראשון של השנה</p>
+                    <a href="https://music.youtube.com/playlist?list=PLG5S1cXoV-2HbSsULpHuwQKLvvD6hkRev&si=2Hsyrc21iBKIxEU2" class="btn">צפייה ב-YouTube</a>
+                </div>
+            </div>
+
+            <div class="card" data-playlist="PLG5S1cXoV-2HXFKe2--SZisx4HLd0li_Q">
+                <div class="wallpaper"></div>
+                <div class="card-content">
+                    <h3>Playlist 2 (2024-2025)</h3>
+                    <p>אוסף מוזיקה נבחרת</p>
+                    <a href="https://music.youtube.com/playlist?list=PLG5S1cXoV-2HXFKe2--SZisx4HLd0li_Q&si=alU-xHmiOAobLU94" class="btn">צפייה ב-YouTube</a>
+                </div>
+            </div>
+
+            <div class="card" data-playlist="PLG5S1cXoV-2G_Zd8lybU9Tf3xBkb_-iZR">
+                <div class="wallpaper"></div>
+                <div class="card-content">
+                    <h3>Playlist 3 (2024-2025)</h3>
+                    <p>הפרק השלישי בסדרה</p>
+                    <a href="https://music.youtube.com/playlist?list=PLG5S1cXoV-2G_Zd8lybU9Tf3xBkb_-iZR&si=ul3dMDfxiibJVzZt" class="btn">צפייה ב-YouTube</a>
+                </div>
+            </div>
+
+            <div class="card" data-playlist="PLG5S1cXoV-2FEhcZbHz8STAumYk3jA0-v">
+                <div class="wallpaper"></div>
+                <div class="card-content">
+                    <h3>Playlist 1 (2025-2026)</h3>
+                    <p>התחלה חדשה לעונה הבאה</p>
+                    <a href="https://music.youtube.com/playlist?list=PLG5S1cXoV-2FEhcZbHz8STAumYk3jA0-v&si=m-3SOlLHfeJq6_ho" class="btn">צפייה ב-YouTube</a>
+                </div>
+            </div>
+
+            <div class="card" data-playlist="PLG5S1cXoV-2HPnsTyWqtx7CCPFlB3Pd5a">
+                <div class="wallpaper"></div>
+                <div class="card-content">
+                    <h3>Playlist 2 (2025-2026)</h3>
+                    <p>המשך הלהיטים של 2026</p>
+                    <a href="https://music.youtube.com/playlist?list=PLG5S1cXoV-2HPnsTyWqtx7CCPFlB3Pd5a&si=2_ifOxXv_IASsA82" class="btn">צפייה ב-YouTube</a>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Bobo FFA - All Cats Reserved</p>
+    </footer>
+
+    <script>
+        // Auto-play first playlist when page loads
+        window.addEventListener('load', function() {
+            const firstPlaylistUrl = "https://music.youtube.com/playlist?list=PLG5S1cXoV-2HbSsULpHuwQKLvvD6hkRev&si=2Hsyrc21iBKIxEU2";
+            window.open(firstPlaylistUrl, '_blank');
+        });
+
+        // Load YouTube playlist thumbnails
+        async function loadPlaylistWallpapers() {
+            const cards = document.querySelectorAll('.card');
+            
+            cards.forEach(card => {
+                const playlistId = card.getAttribute('data-playlist');
+                const wallpaper = card.querySelector('.wallpaper');
+                
+                if (playlistId && wallpaper) {
+                    // Use YouTube oEmbed to fetch playlist info
+                    fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/playlist?list=${playlistId}&format=json`)
+                        .then(response => response.json())
+                        .then(data => {
+                            // Get thumbnail from YouTube
+                            const thumbnailUrl = `https://i.ytimg.com/vi/${playlistId}/maxresdefault.jpg`;
+                            wallpaper.style.backgroundImage = `url('https://i.ytimg.com/vi_webp/${playlistId}/maxresdefault.webp')`;
+                            wallpaper.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+                        })
+                        .catch(err => {
+                            // Fallback: use a nice gradient background
+                            const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#FFA07A', '#98D8C8', '#F7DC6F'];
+                            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                            wallpaper.style.backgroundColor = randomColor;
+                        });
+                }
+            });
+        }
+
+        loadPlaylistWallpapers();
+    </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+:root
+{
+    --bg-main: #fcfcfc;
+    --bg-card: #fff;
+    --accent-blue: #0086f4;
+    --accent-hover: #ff6347;
+    --text-primary: #333;
+    --text-secondary: #666;
+    --border-color: #333;
+    --transition: all 1s ease;
+}
+
+body {
+    font-family: 'Narkiss Tam', 'Narkis Tam', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: var(--accent-blue);
+    color: var(--text-primary);
+    padding: 20px;
+    text-align: center;
+}
+header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.logo-link:hover .logo-img {
+    transform: scale(1.1);
+}
+
+nav {
+    background-color: var(--accent-blue);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-hover);
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+.video-card {
+    background-color: var(--bg-card);
+    border-radius: 6px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+.video-card h2 {
+    margin-top: 0;
+}
+.video-card p {
+    margin-top: 5px;
+}
+.video-card .watch-text {
+    color: var(--accent-hover);
+    font-weight: bold;
+    cursor: pointer;
+}
+.video-card .watch-text:hover {
+    text-decoration: underline;
+}
+h2 {
+    color: var(--text-primary);
+}
+h3 {
+    color: var(--text-secondary);
+}
+p {
+    color: var(--text-secondary);
+}
+
+h6 {
+    color: var(--text-primary);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--accent-blue);
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.button:hover {
+    background-color: var(--accent-hover);
+}
+
+frame button {
+    background-color: var(--accent-blue);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+frame button:hover {
+    background-color: var(--accent-hover);
+}
+
+nav a.nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 800;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+.secondary {
+    background-color: var(--accent-hover);
+}
+.secondary:hover {
+    background-color: var(--accent-blue);
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-secondary);
+}
+footer p {
+    margin: 0;
+}
+footer a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 3px solid var(--border-color);
+}
