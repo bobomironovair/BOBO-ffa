@@ -1,0 +1,151 @@
+:root {
+    --bg-main: #4b0aff;      /* Purple */
+    --bg-card: #002aff;      /* Blue */
+    --bg-secondary: #ffffff; /* White */
+    --accent-yellow: #ddfd09; 
+    --accent-hover: #ffcc00;
+    --text-primary: #0b0b0b;
+    --text-light: #ffffff;
+    --border-color: #0b0b0b;
+    transition: all 1s ease;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Narkiss Tam', 'Narkis Tam', 'Secular One', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(var(--bg-card) 2px, transparent 2px);
+    background-size: 30px 30px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: var(--bg-secondary);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 4px solid var(--border-color);
+}
+
+main {
+    padding: 20px;
+}
+
+main ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+main ul li {
+    margin-bottom: 10px;
+}
+main ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: var(--bg-button-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+main ul li a:hover {
+    background-color: var(--yellow);
+}
+main ul li a:active {
+    background-color: var(--blue);
+}
+footer {
+    background-color: var(--bg-main-color);
+    padding: 20px;
+    text-align: center;
+}
+footer p {
+    color: var(--text-color);
+}
+footer a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    background-color: var(--bg-button-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.button:hover {
+    background-color: var(--yellow);
+}
+.button:active {
+    background-color: var(--blue);
+}
+
+.button nav a {
+    color: var(--text-primary);
+    text-decoration: none;
+    background-color: var(--bg-button-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+.button nav a:hover {
+    background-color: var(--yellow);
+}
+.button nav a:active {
+    background-color: var(--blue);
+}
+
+img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto;
+}
+
+img:not(.logo-img) { /* Apply general image styles, but not to logo images */
+    border-radius: 10px;
+    transition: var(--transition);
+}
+img:hover {
+    transform: scale(1.1);
+}
+.logo-link {
+    /* Consolidated logo-link styles */
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+.logo-link:hover {
+    transform: scale(1.1);
+}
+.logo-img {
+    height: 20px;
+    width: auto;
+    border-radius: 30%;
+    margin-right: 10px;
+    transition: var(--transition);
+}
+.logo-link:hover .logo-img {
+    transform: rotate(360deg);
+}
+.logo-text {
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+.logo-link:hover .logo-text {
+    color: var(--yellow);
+}
+.logo-link:hover .logo-text {
+    color: var(--yellow);
+}
