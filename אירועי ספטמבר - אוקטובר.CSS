@@ -45,6 +45,11 @@ nav.main-nav {
     transform: scale(1.1);
 }
 
+newspaper main {
+    padding: 20px 0;
+}
+
+
 nav a.nav-link {
     color: var(--text-primary);
     text-decoration: none;

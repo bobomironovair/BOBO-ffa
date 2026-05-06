@@ -12,7 +12,8 @@
         <a href="Cataction.html" class="logo-link">
             <img src="Screenshot 2026-03-14 135433.png" alt="Bobo FFA Logo" class="logo-img">
         </a>
-        <a href="סרטי חתולים.html" class="nav-link">סרטים</a>
+        <a href="סרטי חתולים.html" class="nav-link">סרטי חתולים</a>
+        <a href="סרטים.html" class="nav-link">סרטים</a>
         <a href="מופעים.html" class="nav-link">מופעים</a>
         <a href="שיתופי פעולה.html" class="nav-link">שיתופי פעולה</a>
         <a href="סרטוני טיולים.html" class="nav-link">טיולים</a>
@@ -34,6 +35,7 @@
                     <a href="https://music.youtube.com/playlist?list=PLG5S1cXoV-2HbSsULpHuwQKLvvD6hkRev&si=2Hsyrc21iBKIxEU2" class="btn">צפייה ב-YouTube</a>
                 </div>
             </div>
+            <script type="module" src="playlists music show.js"></script>
 
             <div class="card" data-playlist="PLG5S1cXoV-2HXFKe2--SZisx4HLd0li_Q">
                 <div class="wallpaper"></div>
@@ -43,6 +45,7 @@
                     <a href="https://music.youtube.com/playlist?list=PLG5S1cXoV-2HXFKe2--SZisx4HLd0li_Q&si=alU-xHmiOAobLU94" class="btn">צפייה ב-YouTube</a>
                 </div>
             </div>
+            <script type="module" src="playlists music show#2.js"></script>
 
             <div class="card" data-playlist="PLG5S1cXoV-2G_Zd8lybU9Tf3xBkb_-iZR">
                 <div class="wallpaper"></div>
@@ -52,6 +55,7 @@
                     <a href="https://music.youtube.com/playlist?list=PLG5S1cXoV-2G_Zd8lybU9Tf3xBkb_-iZR&si=ul3dMDfxiibJVzZt" class="btn">צפייה ב-YouTube</a>
                 </div>
             </div>
+            <script type="module" src="playlists music show#3.js"></script>
 
             <div class="card" data-playlist="PLG5S1cXoV-2FEhcZbHz8STAumYk3jA0-v">
                 <div class="wallpaper"></div>
@@ -61,6 +65,8 @@
                     <a href="https://music.youtube.com/playlist?list=PLG5S1cXoV-2FEhcZbHz8STAumYk3jA0-v&si=m-3SOlLHfeJq6_ho" class="btn">צפייה ב-YouTube</a>
                 </div>
             </div>
+            <script type="module" src="playlists music show#4.js"></script>
+
 
             <div class="card" data-playlist="PLG5S1cXoV-2HPnsTyWqtx7CCPFlB3Pd5a">
                 <div class="wallpaper"></div>
@@ -70,6 +76,7 @@
                     <a href="https://music.youtube.com/playlist?list=PLG5S1cXoV-2HPnsTyWqtx7CCPFlB3Pd5a&si=2_ifOxXv_IASsA82" class="btn">צפייה ב-YouTube</a>
                 </div>
             </div>
+            <script type="module" src="playlists music show#5.js"></script>
                 </div>
             </div>
         </div>
@@ -80,12 +87,6 @@
     </footer>
 
     <script>
-        // Auto-play first playlist when page loads
-        window.addEventListener('load', function() {
-            const firstPlaylistUrl = "https://music.youtube.com/playlist?list=PLG5S1cXoV-2HbSsULpHuwQKLvvD6hkRev&si=2Hsyrc21iBKIxEU2";
-            window.open(firstPlaylistUrl, '_blank');
-        });
-
         // Load YouTube playlist thumbnails
         async function loadPlaylistWallpapers() {
             const cards = document.querySelectorAll('.card');

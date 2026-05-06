@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="utf-8">
@@ -59,7 +59,8 @@
         <a href="Cataction.html" class="logo-link">
             <img src="Screenshot 2026-03-14 135433.png" alt="Bobo FFA Logo" class="logo-img">
         </a>
-        <a href="סרטי חתולים.html" class="nav-link">סרטים</a>
+        <a href="סרטים.html" class="nav-link">סרטים</a>
+        <a href="סרטי חתולים.html" class="nav-link">סרטי חתולים</a>
         <a href="מופעים.html" class="nav-link">מופעים</a>
         <a href="שיתופי פעולה.html" class="nav-link">שיתופי פעולה</a>
         <a href="סרטוני טיולים.html" class="nav-link">טיולים</a>
@@ -188,13 +189,17 @@
         }
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
-                 const y = Math.random() * canvas.height;
-                const size = 30 + Math.random() * 50;
-                ctx.fillStyle = `rgba(255, 105, 180, ${Math.random()})`;
-                ctx.beginPath();
-                ctx.arc(x, y, size / 2, 0, Math.PI * 2);
-                ctx.fill();
-            
+
+        function drawBackground() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * canvas.height;
+            const size = 30 + Math.random() * 50;
+            ctx.fillStyle = `rgba(255, 105, 180, ${Math.random()})`;
+            ctx.beginPath();
+            ctx.arc(x, y, size / 2, 0, Math.PI * 2);
+            ctx.fill();
+        }
         
         setInterval(drawBackground, 1000);
         document.addEventListener('animationend', (event) => {
@@ -205,12 +210,6 @@
             }
         });
     </script>
-    <footer>
-        <track src="captions.vtt" kind="captions" srclang="en" label="English">
-        <track src="captions.vtt" kind="captions" srclang="he" label="עברית">
-        <track src="captions.vtt" kind="subtitles" srclang="en" label="русский">
-        <track src="captions.vtt" kind="subtitles" srclang="he" label="українська">
-    </footer>
     <footer>
         <p>&copy; 2026 Bobo FFA - All Cats Reserved</p>
     </footer>

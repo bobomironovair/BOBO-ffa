@@ -116,6 +116,11 @@ main {
     transform: scale(1.05);
 }
 
+newspaper main {
+    padding: 20px 0;
+}
+
+
 footer {
     background-color: var(--accent-blue);
     color: rgb(0, 60, 241);

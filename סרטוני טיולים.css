@@ -45,6 +45,36 @@ header h1 {
     transform: scale(1.1);
 }
 
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+main h2 {
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+button main {
+    background-color: var(--accent-blue);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+button main:hover {
+    background-color: var(--accent-hover);
+}
+
+button main:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+}
+
 nav {
     background-color: var(--accent-blue);
     padding: 10px;
@@ -176,4 +206,340 @@ video {
     height: auto;
     border-radius: 8px;
     border: 3px solid var(--border-color);
+}
+
+script {
+    display: none;
+}
+
+track {
+    display: none;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--accent-blue);
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: var(--accent-hover);
+
+}
+
+feComponentTransfer {
+    display: none;
+}
+
+caption {
+    display: none;
+}
+
+.video-card .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* יחס 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+.video-card .video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.video-card .video-wrapper video:hover {
+    transform: scale(1.05);
+    transition: var(--transition);
+}
+.video-card .video-wrapper video:active {
+    transform: scale(0.95);
+    transition: var(--transition);
+}
+.video-card .video-wrapper video:focus {
+    outline: 3px solid var(--accent-hover);
+    transition: var(--transition);
+}
+.video-card .video-wrapper video:focus:hover {
+    transform: scale(1.1);
+    transition: var(--transition);
+}
+.video-card .video-wrapper video:focus:active {
+    transform: scale(0.9);
+    transition: var(--transition);
+}
+
+nav .logo-img{
+    display: block;
+    margin: 0 auto;
+    transition: var(--transition);
+} 
+.logo button {
+    background-color: var(--accent-blue);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+.logo-link:hover .logo-img {
+    transform: scale(1.1);
+}
+.logo button:hover {
+    background-color: var(--accent-hover);
+}
+nav button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+}
+
+a nav button frame {
+    background-color: var(--accent-blue);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+A nav button frame:hover {
+    background-color: var(--accent-hover);
+}
+.logo button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+}
+menu a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 800;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+menu a:hover {
+    background-color: var(--accent-hover);
+    color: var(--text-primary);
+}
+menu a.active {
+    background-color: var(--accent-hover);
+    color: var(--text-primary);
+}
+footer a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+footer p {
+    margin: 0;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-secondary);
+    display: block;
+}
+
+nav button {
+    background-color: var(--accent-blue);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+nav button:hover {
+    background-color: var(--accent-hover);
+}
+nav button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+}
+.logo button {
+    background-color: var(--accent-blue);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+.logo-link:hover .logo-img {
+    transform: scale(1.1);
+}
+
+textarea
+{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 16px;
+    transition: var(--transition);
+}
+textarea:focus
+{
+    border-color: var(--accent-hover);
+    outline: none;
+}
+.logo-link:hover .logo-img {
+    transform: scale(1.1);
+}
+.logo button:hover {
+    background-color: var(--accent-hover);
+}
+.logo button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+}
+.logo button:focus {
+    outline: 3px solid var(--accent-hover);
+    transition: var(--transition);
+}
+
+a.nav-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 800;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: var(--transition);
+    box-sizing: border-box;
+}
+a.nav-link:hover {
+    background-color: var(--accent-hover);
+    color: var(--text-primary);
+}
+a.nav-link.active {
+    background-color: var(--accent-hover);
+    color: var(--text-primary);
+}
+::-webkit-validation-bubble-text-block
+{
+    display: none;
+}
+
+script {
+    display: none;
+    color: #0086f4;
+    contain-intrinsic-block-size: var(--accent-blue);
+    contain-intrinsic-inline-size: var(--accent-blue);
+}
+track {
+    display: none;
+    contain-intrinsic-block-size: var(--accent-blue)
+    contain-intrinsic-inline-size var(--accent-blue);
+}
+
+fuction {
+    display: none;
+    border-color: blue;
+}
+
+canvas
+{
+    display: none;
+    border-color: blue;
+    contain-intrinsic-inline-size: var(--accent-blue);
+    contain-intrinsic-block-size: var(--accent-blue);
+}
+
+.button {
+    display: none;
+    border-color: blue;
+    box-sizing: border-box;
+    contain-intrinsic-inline-size: var(--accent-blue);
+    contain-intrinsic-block-size: var(--accent-blue);
+}
+
+.button:hover {
+    display: none;
+    border-color: blue;
+    box-sizing: 20px;
+    contain-intrinsic-inline-size: var(--transition);
+    contain-intrinsic-block-size: var(--transition);
+    color: aquamarine;
+}
+
+.button:active {
+    display: none;
+    border-color: blue;
+}
+
+.video-card .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+.video-card .video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.video-card .video-wrapper video
+{
+    transform: scale(1.05);
+    transition: var(--transition);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--accent-blue);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 3px solid var(--border-color);
+    box-shadow: 4px 4px 0px var(--border-color);
+    transition: var(--transition);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px var(--border-color);
+}
+
+.btn.secondary {
+    background: var(--bg-secondary);
+    margin: 5px;
+}
+
+@media screen {
+    .container {
+        padding: 15px;
+    }
+    header h1 {
+        font-size: 1.8rem;
+    }
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .menu {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
 }

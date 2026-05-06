@@ -11,10 +11,11 @@
     <nav class="main-nav">
         <a href="Cataction.html" class="logo-link">
             <img src="Screenshot 2026-03-14 135433.png" alt="Bobo FFA Logo" class="logo-img">
-        </a>
-        <a href="סרטי חתולים.html" class="nav-link">סרטים</a>
+        </a>        <a href="Cataction.html" class="nav-link">חזור לדף הבית</a>
+        <a href="סרטים.html" class="nav-link">סרטים</a>
         <a href="מופעים.html" class="nav-link">מופעים</a>
         <a href="שיתופי פעולה.html" class="nav-link">שיתופי פעולה</a>
+        <a href="סרטי חתולים.html" class="nav-link">סרטי חתולים</a>
         <a href="סרטוני טיולים.html" class="nav-link">טיולים</a>
         <a href="playlists.html" class="nav-link">פלייליסטים</a>
     </nav>
@@ -49,7 +50,7 @@
             <h6>הגבעות הירוקות, האוויר הצח, זרימת המים בחורף, הפריחות הקסומות ובעיקר אלו של האביב, כשכליל החורש מרהיב בוורוד וסגול – כל אלו הופכים את הנחל היפהפה הזה לפופולרי במיוחד, בעיקר בשבתות ובחגים. לאחר 4 שנים של עבודות שיפוץ ושידרוג באתר, נחל השופט החדש נפתח מחדש למבקרים ומציע שביל גישה מעגלי ומונגש לבעלי מוגבלויות, ספסלי ישיבה חדשים</h6>
             <p class="watch-text">⏯ לחץ כאן לצפייה בסרטון</p>
             <div class="video-wrapper">
-                <video id="video4" controls>
+                <video id="video4" controls poster="טיול בנחל השופט.png">
                     <source src="נחל השופט.mp4" type="video/mp4">
                     הדפדפן שלך לא תומך בנגן הוידאו.
                 </video>
@@ -106,7 +107,6 @@
                 ctx.fill();
             }
         }
-HTMLCanvasElement
             function resizeCanvas() {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
@@ -120,6 +120,27 @@ HTMLCanvasElement
                 event.target.style.animation = '';
             }
         });
-    </script>
+    </script> 
+    <textarea id="backgroundCode" style="display:none;">
+        const canvas = document.getElementById('backgroundCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function drawBackground() {
+            ctx.fillStyle = '#f0f0f0';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            const catCount = 20;
+            for (let i = 0; i < catCount; i++) {
+                const x = Math.random() * canvas.width;
+                const y = Math.random() * canvas.height;
+                const size = 30 + Math.random() * 50;
+                ctx.beginPath();
+                ctx.arc(x, y, size / 2, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
 </body>
 </html>
