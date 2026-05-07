@@ -120,6 +120,31 @@ newspaper main {
     padding: 20px 0;
 }
 
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: var(--accent-blue);
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--accent-orange);
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
 
 footer {
     background-color: var(--accent-blue);
