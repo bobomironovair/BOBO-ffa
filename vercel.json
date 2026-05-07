@@ -3,6 +3,12 @@
   "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "/:path*/index.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
