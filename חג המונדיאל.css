@@ -1,5 +1,5 @@
 :root {
-    --bg-main: #4b0aff;      /* Purple */
+    --bg-main: #e60aff;      /* Purple */
     --bg-card: #002aff;      /* Blue */
     --bg-secondary: #ffffff; /* White */
     --accent-yellow: #ddfd09; 
@@ -7,9 +7,7 @@
     --text-primary: #0b0b0b;
     --text-light: #ffffff;
     --border-color: #0b0b0b;
-    --blue: #002aff;
-    --yellow: #ddfd09;
-    --transition: all 0.3s ease;
+    --transition: all 0.3s double;
 }
 
 body {
@@ -85,6 +83,31 @@ body {
     text-align: justify;
 }
 
+img.article-image {
+    width: 100%;
+    margin: 20px 0;
+    border: 3px solid var(--border-color);
+    box-shadow: 5px 5px 0px var(--border-color);
+    border-radius: 10px;
+}
+
+.article-text {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+main p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+}
+main h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--accent-blue);
+}
+
 /* ניווט וכפתורים */
 .main-nav {
     background-color: var(--bg-card);
@@ -108,7 +131,7 @@ body {
 .button {
     display: inline-block;
     padding: 12px 30px;
-    background-color: var(--yellow);
+    background-color: var(--accent-yellow);
     color: var(--text-primary);
     text-decoration: none;
     font-weight: bold;
@@ -134,8 +157,7 @@ footer {
 img {
     max-width: 100%;
     height: auto;
-    side: center;
-    margin: 20px 0;
+    margin: 20px auto;
     border: 2px solid var(--border-color);
     box-shadow: 5px 5px 0px var(--border-color);
 }
