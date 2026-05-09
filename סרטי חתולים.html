@@ -8,7 +8,6 @@
     <link rel="canonical" href="http://www.boboffa.com">
 </head>
 <body>
-    <main>
     <nav class="main-nav">
         <a href="Cataction.html" class="logo-link">
             <img src="Screenshot 2026-03-14 135433.png" alt="Bobo FFA Logo" class="logo-img">
@@ -19,14 +18,28 @@
         <a href="סרטוני טיולים.html" class="nav-link">טיולים</a>
         <a href="playlists.html" class="nav-link">פלייליסטים</a>
     </nav>
-    </main>
-    <main>
     <header>
         <div class="container">
             <h1>Bobo FFA - סרטי חתולים</h1>
             <p class="tagline">Fine Funniest Animation</p>
         </div>
     </header>
+    <main class="container">
+        <section class="intro">
+            <h2>Lollipop Cats</h2>
+            <div class="video-wrapper">
+                <video id="lollipopVideo" controls>
+                    <source src="Lollipop Cats.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+            <div class="controls">
+                <button onclick="playVideo('lollipopVideo')">▶ Play</button>
+                <button onclick="pauseVideo('lollipopVideo')">⏸ Pause</button>
+                <button onclick="stopVideo('lollipopVideo')">⏹ Stop</button>
+            </div>
+        </section>
+    </main>
     <main class="container">
         <section class="video-card">
             <h2>סרטי קולנוע: סרט חתולים 1</h2>
