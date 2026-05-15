@@ -1,2 +1,250 @@
-# BOBO-ffa
-העסק שלי
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cataction - Bobo FFA</title>
+    <link rel="stylesheet" href="Cataction.css">
+    <style>
+        .controls {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .controls button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .controls button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .watch-text {
+            font-size: 18px;
+            color: #ff6b6b;
+            font-weight: bold;
+            margin: 10px 0;
+            text-align: center;
+        }
+        .video-card {
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+        .video-wrapper {
+            width: 100%;
+            background-color: #000;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="Cataction.html" class="logo-link">
+            <img src="Screenshot 2026-03-14 135433.png" alt="Bobo FFA Logo" class="logo-img">
+        </a>
+        <a href="סרטים.html" class="nav-link">סרטים</a>
+        <a href="סרטי חתולים.html" class="nav-link">סרטי חתולים</a>
+        <a href="מופעים.html" class="nav-link">מופעים</a>
+        <a href="שיתופי פעולה.html" class="nav-link">שיתופי פעולה</a>
+        <a href="סרטוני טיולים.html" class="nav-link">טיולים</a>
+        <a href="playlists.html" class="nav-link">פלייליסטים</a>
+    </nav>
+    <header>
+        <div class="container">
+            <h1>Bobo FFA</h1>
+            <p class="tagline">Fine Funniest Animation</p>
+        </div>
+    </header>
+    <main class="container">
+        <section class="intro">
+            <h2>Paper cat</h2>
+            <div class="video-wrapper">
+                <video id="Paper cat" controls>
+                    <source src="Paper cat.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+            <div class="controls">
+                <button onclick="playVideo('Paper cat')">▶ Play</button>
+                <button onclick="pauseVideo('Paper cat')">⏸ Pause</button>
+                <button onclick="stopVideo('Paper cat')">⏹ Stop</button>
+            </div>
+        </section>
+        <main class="container">
+        <section class="intro">
+            <h2>Lollipop Cats</h2>
+            <div class="video-wrapper">
+                <video id="lollipopVideo" controls>
+                    <source src="Lollipop Cats.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+            <div class="controls">
+                <button onclick="playVideo('lollipopVideo')">▶ Play</button>
+                <button onclick="pauseVideo('lollipopVideo')">⏸ Pause</button>
+                <button onclick="stopVideo('lollipopVideo')">⏹ Stop</button>
+            </div>
+        </section>
+    </main>
+    <main class="container">
+        <section class="video-card">
+            <h2>מופע מרכזי: הפרעת קצב</h2>
+            <p class="watch-text">⏯ לחץ כאן לצפייה בסרטון</p>
+            <div class="video-wrapper">
+                <video id="video1" controls>
+                    <source src="הפרעת קצב - המופע הראשון 26.09.2024.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+            <div class="controls">
+                <button onclick="playVideo('video1')">▶ Play</button>
+                <button onclick="pauseVideo('video1')">⏸ Pause</button>
+                <button onclick="stopVideo('video1')">⏹ Stop</button>
+            </div>
+        </section>
+        <section class="video-card">
+            <h2>מופע מרכזי: הפרעת קצב - מופע 2</h2>
+            <p class="watch-text">⏯ לחץ כאן לצפייה בסרטון</p>
+            <div class="video-wrapper">
+                <video id="video2" controls>
+                    <source src="הפרעת קצב - המופע השני 26.12.2024.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+            <div class="controls">
+                <button onclick="playVideo('video2')">▶ Play</button>
+                <button onclick="pauseVideo('video2')">⏸ Pause</button>
+                <button onclick="stopVideo('video2')">⏹ Stop</button>
+            </div>
+        </section>
+        <section class="video-card">
+            <h2>סרטי קולנוע: סרט חתולים 2</h2>
+            <p class="watch-text">⏯ לחץ כאן לצפייה בסרטון</p>
+            <div class="video-wrapper">
+                <video id="video3" controls poster="Cataction 2.png">
+                    <source src="Cataction.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+            <div class="controls">
+                <button onclick="playVideo('video3')">▶ Play</button>
+                <button onclick="pauseVideo('video3')">⏸ Pause</button>
+                <button onclick="stopVideo('video3')">⏹ Stop</button>
+            </div>
+        </section>
+        <section class="video-card">
+            <h2>סרטי קולנוע: סרט חתולים 2</h2>
+            <p class="watch-text">⏯ לחץ כאן לצפייה בסרטון</p>
+            <div class="video-wrapper">
+                <video id="video4" controls poster="Cataction 2 photo.png">
+                    <source src="Cataction 2.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+            <div class="controls">
+                <button onclick="playVideo('video4')">▶ Play</button>
+                <button onclick="pauseVideo('video4')">⏸ Pause</button>
+                <button onclick="stopVideo('video4')">⏹ Stop</button>
+            </div>
+        </section>
+        <section class="video-card">
+            <h2>סרט קולנוע 3</h2>
+            <p class="watch-text">⏯ לחץ כאן לצפייה בסרטון</p>
+            <div class="video-wrapper">
+                <video id="video5" controls poster="Cataction 3 - The Poster.png">
+                    <source src="Cataction 3.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+            <div class="controls">
+                <button onclick="playVideo('video5')">▶ Play</button>
+                <button onclick="pauseVideo('video5')">⏸ Pause</button>
+                <button onclick="stopVideo('video5')">⏹ Stop</button>
+            </div>
+        </section>
+        <section class="video-card">
+            <h2>סרט קולנוע 4</h2>
+            <p class="watch-text">⏯ לחץ כאן לצפייה בסרטון</p>
+            <div class="video-wrapper">
+                <video id="video6" controls poster="Cataction 4.png">
+                    <source src="Cataction 4.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+            <div class="controls">
+                <button onclick="playVideo('video6')">▶ Play</button>
+                <button onclick="pauseVideo('video6')">⏸ Pause</button>
+                <button onclick="stopVideo('video6')">⏹ Stop</button>
+            </div>
+        </section>
+        <section class="video-card">
+            <h2>סרט קולנוע 5</h2>
+            <p class="watch-text">⏯ לחץ כאן לצפייה בסרטון</p>
+            <div class="video-wrapper">
+                <video id="video7" controls poster="Cataction 5 - The Poster.png">
+                    <source src="Cataction 5.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+            <div class="controls">
+                <button onclick="playVideo('video7')">▶ Play</button>
+                <button onclick="pauseVideo('video7')">⏸ Pause</button>
+                <button onclick="stopVideo('video7')">⏹ Stop</button>
+            </div>
+        </section>
+    </main>
+    <canvas id="backgroundCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('backgroundCanvas');
+        const ctx = canvas.getContext('2d');
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function drawBackground() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * canvas.height;
+            const size = 30 + Math.random() * 50;
+            ctx.fillStyle = `rgba(255, 105, 180, ${Math.random()})`;
+            ctx.beginPath();
+            ctx.arc(x, y, size / 2, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        
+        setInterval(drawBackground, 1000);
+        document.addEventListener('animationend', (event) => {
+            if (event.animationName === 'fadeIn') {
+                event.target.style.animation = 'fadeOut 1s forwards';
+            } else if (event.animationName === 'fadeOut') {
+                event.target.style.animation = '';
+            }
+        });
+    </script>
+    <footer>
+        <p>&copy; 2026 Bobo FFA - All Cats Reserved</p>
+    </footer>
+    <script src="Cataction.js"></script>
+    <p style="text-align: center;">לפלייליסט של הסרטונים שלנו, בקרו ב<a href="playlist.html">עמוד הפלייליסט</a>.</p>
+</body>
+</html>
