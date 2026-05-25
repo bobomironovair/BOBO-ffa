@@ -1,0 +1,215 @@
+:root {
+    --color-primary: #007bff;
+    --color-secondary: #6c757d;
+    --color-success: #28a745;
+    --color-danger: #dc3545;
+    --color-warning: #ffc107;
+    --color-info: #17a2b8;
+    --color-light: #f8f9fa;
+    --color-dark: #343a40;
+    --color-navigation: #007bff;
+}
+
+body {
+    font-family: "Narkiss Tam", sans-serif;
+    font-weight: var(--font-weight);
+    font-style: var(--font-style);
+    font-size: var(--font-size-base);
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+button {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color-secondary);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -15px;
+    margin-bottom: -15px;
+}
+
+.col {
+    flex: 1;
+    padding: 15px;
+}
+
+nav {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: 10px;
+}
+
+nav a {
+    color: var(--color-light);
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: 10px;
+    text-align: center;
+}
+
+footer a {
+    color: var(--color-light);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+div.card {
+    background-color: var(--color-light);
+    border: 1px solid var(--color-secondary);
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+header {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+header h2 {
+    font-size: 1.5rem;
+}
+
+header p {
+    font-size: 1rem;
+}
+
+header a {
+    color: var(--color-light);
+    text-decoration: none;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+}
+
+header .logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+main {
+    padding: 20px;
+}
+
+main h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+main p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+nav a navigation {
+    color: var(--color-light);
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: var(--color-light);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
