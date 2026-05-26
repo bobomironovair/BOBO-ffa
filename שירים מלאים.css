@@ -5,27 +5,61 @@
     --color-danger: #dc3545;
     --color-warning: #ffc107;
     --color-info: #17a2b8;
-    --color-light: #f8f9fa;
+    --color-light: #f8f9fa; /* Light background */
     --color-dark: #343a40;
     --color-navigation: #007bff;
+
+    /* Added font variables for better control */
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-size-base: 16px;
+    --font-size-sm: 14px;
+    --font-size-md: 18px;
+    --font-size-lg: 24px;
+    --font-size-xl: 32px;
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 1.75rem;
+    --font-size-h4: 1.5rem;
+    --font-size-h5: 1.25rem;
+    --font-size-h6: 1rem;
+
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 15px;
+    --box-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --box-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --transition-speed: 0.3s ease;
 }
 
 body {
-    font-family: "Narkiss Tam", sans-serif;
-    font-weight: var(--font-weight);
-    font-style: var(--font-style);
-    font-size: var(--font-size-base);
+    font-family: "secular one", sans-serif;
+    font-weight: var(--font-weight-normal); /* Use defined variable */
+    font-style: normal; /* Assuming normal for body, can be changed */
+    font-size: var(--font-size-base); /* Use defined variable */
     color: var(--color-dark);
     background-color: var(--color-light);
     margin: 0;
     padding: 0;
+    line-height: 1.6; /* Added for better readability */
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--color-primary);
     margin-top: 0;
     margin-bottom: 0.5rem;
+    font-weight: var(--font-weight-bold);
 }
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+h4 { font-size: var(--font-size-h4); }
+h5 { font-size: var(--font-size-h5); }
+h6 { font-size: var(--font-size-h6); }
 
 p {
     margin-top: 0;
@@ -35,9 +69,11 @@ p {
 a {
     color: var(--color-primary);
     text-decoration: none;
+    transition: color var(--transition-speed);
 }
 
 a:hover {
+    color: var(--color-secondary); /* Slightly change color on hover */
     text-decoration: underline;
 }
 
@@ -56,18 +92,25 @@ button {
     background-color: var(--color-primary);
     color: var(--color-light);
     border: none;
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    font-size: var(--font-size-sm);
+    border-radius: var(--border-radius-sm);
+    padding: 0.75rem 1.5rem; /* Increased padding */
+    font-size: var(--font-size-base); /* Changed to base size */
     cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    font-weight: var(--font-weight-semibold);
 }
 
 button:hover {
     background-color: var(--color-secondary);
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.button:active {
+    transform: translateY(0); /* Reset on click */
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1100px; /* Increased max-width for more content */
     margin: 0 auto;
     padding: 20px;
 }
@@ -75,8 +118,8 @@ button:hover {
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-top: -15px;
-    margin-bottom: -15px;
+    margin-top: -15px; /* Standardize row margins */
+    margin-bottom: -15px; /* Standardize row margins */
 }
 
 .col {
@@ -84,55 +127,88 @@ button:hover {
     padding: 15px;
 }
 
+/* Navigation styles */
 nav {
     background-color: var(--color-dark);
     color: var(--color-light);
-    padding: 10px;
+    padding: 15px 20px; /* Increased padding */
+    display: flex;
+    justify-content: center; /* Center navigation links */
+    align-items: center;
+    box-shadow: var(--box-shadow-md);
 }
 
 nav a {
     color: var(--color-light);
     text-decoration: none;
-    margin-right: 15px;
+    margin: 0 15px;
+    font-size: var(--font-size-md); /* Larger font size */
+    font-weight: var(--font-weight-medium);
+    padding: 8px 12px;
+    border-radius: var(--border-radius-sm);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 nav a:hover {
-    text-decoration: underline;
+    text-decoration: none; /* Remove underline on hover for nav links */
+    background-color: var(--color-primary);
+    color: var(--color-light);
 }
 
+nav a.active {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    font-weight: var(--font-weight-bold);
+}
+
+/* Footer styles */
 footer {
     background-color: var(--color-dark);
     color: var(--color-light);
-    padding: 10px;
+    padding: 25px 20px;
     text-align: center;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: var(--font-size-sm);
 }
 
 footer a {
-    color: var(--color-light);
+    color: var(--color-info); /* Different color for footer links */
     text-decoration: none;
+    margin: 0 8px;
+    transition: color var(--transition-speed);
 }
 
 footer a:hover {
     text-decoration: underline;
+    color: var(--color-light);
 }
 
 div.card {
     background-color: var(--color-light);
     border: 1px solid var(--color-secondary);
-    border-radius: 4px;
+    border-radius: var(--border-radius-sm); /* Using variable */
     padding: 15px;
     margin-bottom: 20px;
 }
 
+/* Header styles */
 header {
     background-color: var(--color-primary);
     color: var(--color-light);
-    padding: 20px;
+    padding: 40px 20px; /* More generous padding */
     text-align: center;
+    box-shadow: var(--box-shadow-md);
+    margin-bottom: 30px;
 }
 
 header h1 {
-    font-size: 2rem;
+    font-size: var(--font-size-xl); /* Larger header title */
+    margin-bottom: 10px;
+    color: var(--color-light); /* Ensure h1 in header is light */
 }
 
 header h2 {
@@ -141,15 +217,12 @@ header h2 {
 
 header p {
     font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 header a {
     color: var(--color-light);
     text-decoration: none;
-}
-
-header a:hover {
-    text-decoration: underline;
 }
 
 header img {
@@ -158,58 +231,138 @@ header img {
 }
 
 header .logo {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-    vertical-align: middle;
+    width: 80px; /* Larger logo */
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 50%; /* Make logo round */
+    border: 3px solid var(--color-light);
+    box-shadow: var(--box-shadow-sm);
 }
 
+/* Main content styles */
 main {
-    padding: 20px;
+    padding: 30px 0; /* Adjust padding */
 }
 
 main h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: var(--font-size-h2);
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--color-dark);
 }
 
-main p {
-    font-size: 1rem;
-    margin-bottom: 20px;
+/* Song Grid */
+.song-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Increased gap */
+    margin-top: 20px;
 }
 
-main img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-nav a navigation {
-    color: var(--color-light);
-    text-decoration: none;
-    margin-right: 15px;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-footer {
-    background-color: var(--color-dark);
-    color: var(--color-light);
+/* Song Card styles */
+.song-card {
+    background-color: var(--color-light);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--border-radius-lg); /* More rounded corners */
     padding: 20px;
     text-align: center;
+    box-shadow: var(--box-shadow-md);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-footer p {
-    margin: 0;
+.song-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-footer a {
-    color: var(--color-light);
-    text-decoration: none;
+.song-cover {
+    width: 100%;
+    max-width: 200px; /* Max width for cover image */
+    height: auto;
+    border-radius: var(--border-radius-md);
+    margin-bottom: 15px;
+    border: 2px solid var(--color-primary);
+    box-shadow: var(--box-shadow-sm);
 }
 
-footer a:hover {
-    text-decoration: underline;
+.song-card h3 {
+    font-size: var(--font-size-h4);
+    margin-bottom: 5px;
+    color: var(--color-dark);
+}
+
+.song-card .artist-name {
+    font-size: var(--font-size-sm);
+    color: var(--color-secondary);
+    margin-bottom: 15px;
+}
+
+.song-card .play-button {
+    width: 100%;
+    max-width: 150px;
+    padding: 10px 20px;
+    font-size: var(--font-size-base);
+    background-color: var(--color-success); /* Use success color for play button */
+}
+
+.song-card .play-button:hover {
+    background-color: #218838; /* Manual darken */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: var(--font-size-h2);
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        margin: 5px 0;
+    }
+
+    .song-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .song-card {
+        padding: 15px;
+    }
+
+    .song-cover {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: var(--font-size-h3);
+    }
+
+    header p {
+        font-size: var(--font-size-sm);
+    }
+
+    main h2 {
+        font-size: var(--font-size-h3);
+    }
+
+    .song-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+
+    .song-card .play-button {
+        max-width: 100%;
+    }
 }

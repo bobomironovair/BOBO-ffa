@@ -1,41 +1,73 @@
-DOCTYPE HTML 
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cataction - Bobo FFA</title>
+    <title>שירים מלאים - Boboffa</title>
     <link rel="stylesheet" href="שירים מלאים.css">
-    <link rel="canonical" href="https://www.boboffa.co.il/שירים%20מלאים.html">
 </head>
 <body>
+    <header>
+        <div class="container">
+            <img src="Screenshot 2026-03-14 135433.png" alt="Boboffa Logo" class="logo"> <!-- Placeholder logo -->
+            <h1>שירים מלאים</h1>
+        </div>
+    </header>
     <nav class="main-nav">
         <a href="Cataction.html" class="logo-link">
             <img src="Screenshot 2026-03-14 135433.png" alt="Bobo FFA Logo" class="logo-img">
         </a>
-        <a href="סרטי חתולים.html" class="nav-link">סרטי חתולים</a>
         <a href="סרטים.html" class="nav-link">סרטים</a>
+        <a href="סרטי חתולים.html" class="nav-link">סרטי חתולים</a>
         <a href="מופעים.html" class="nav-link">מופעים</a>
         <a href="שיתופי פעולה.html" class="nav-link">שיתופי פעולה</a>
         <a href="סרטוני טיולים.html" class="nav-link">טיולים</a>
         <a href="playlists.html" class="nav-link">פלייליסטים</a>
+        <a href="news.html" class="nav-link">חדשות</a>
+        <a href="שירים מלאים.html" class ="nav-link">שירים מלאים</a>
     </nav>
-    <header>
+    <nav>
         <div class="container">
-            <h1>שירים מלאים - Bobo FFA</h1>
-            <p class="tagline">אוסף שירים מלאים</p>
+
         </div>
-    </header>
-    <main class="container">
-        <div class="content-grid">
-            <div class="card">
-                <div class="wallpaper"></div>
-                <div class="card-content">
-                    <h3>All of The Ways - Bobo FFA</h3>
-                    <p>שיר ראשון</p>
-                    <a href="All of The Ways.MP3" class="btn">להאזנה</a>
+    </nav>
+
+    <main>
+        <div class="container">
+            <h2>השירים האחרונים</h2>
+            <div class="song-grid">
+                <!-- Song Card 1 -->
+                <div class="song-card">
+                    <img src="Album.png" alt="שיר 1" class="song-cover">
+                    <audio controls class="audio-player">
+                        <source src="All of The ways.mp3" type="audio/mpeg">
+                        הדפדפן שלך אינו תומך בתגית האודיו.
+                    </audio>
+                    <h3>All of The ways</h3>
+                    <p class="artist-name">BOBO FFA</p>
+                    <button class="play-button">נגן</button>
                 </div>
+                <!-- Song Card 2 -->
+                <div class="song-card">
+                    <img src="Album.png" alt="שיר 2" class="song-cover">
+                    <audio controls class="audio-player">
+                        <source src="Music for Tourism.mp3" type="audio/mpeg">
+                        הדפדפן שלך אינו תומך בתגית האודיו.
+                    </audio>
+                    <h3>Music for Tourism</h3>
+                    <p class="artist-name">BOBO FFA</p>
+                    <button class="play-button">נגן</button>
+                </div>
+                <!-- Song Card 3 -->
+                <!-- Add more song cards as needed -->
             </div>
         </div>
     </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Boboffa. כל הזכויות שמורות.</p>
+        </div>
+    </footer>
 </body>
 </html>
