@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Bobo Ffa Font';
+    src: url('fonts/BoboFfaFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --color-primary: #007bff;
     --color-secondary: #6c757d;
@@ -36,17 +43,13 @@
 }
 
 body {
-    font-family: "secular one", sans-serif;
-    font-weight: var(--font-weight-normal); /* Use defined variable */
-    font-style: normal; /* Assuming normal for body, can be changed */
-    font-size: var(--font-size-base); /* Use defined variable */
-    color: var(--color-dark);
-    background-color: var(--color-light);
+            font-family: Bobo Ffa Font, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
     margin: 0;
-    padding: 0;
-    line-height: 1.6; /* Added for better readability */
+    padding: 20px;
+    line-height: 2;
 }
-
 h1, h2, h3, h4, h5, h6 {
     color: var(--color-primary);
     margin-top: 0;
@@ -131,11 +134,18 @@ button:hover {
 nav {
     background-color: var(--color-dark);
     color: var(--color-light);
-    padding: 15px 20px; /* Increased padding */
+    padding: 10px 20px;
     display: flex;
     justify-content: center; /* Center navigation links */
     align-items: center;
     box-shadow: var(--box-shadow-md);
+    gap: 10px;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    border-radius: var(--border-radius-sm);
 }
 
 nav a {
@@ -199,7 +209,7 @@ div.card {
 header {
     background-color: var(--color-primary);
     color: var(--color-light);
-    padding: 40px 20px; /* More generous padding */
+    padding: 30px 20px;
     text-align: center;
     box-shadow: var(--box-shadow-md);
     margin-bottom: 30px;
@@ -231,9 +241,9 @@ header img {
 }
 
 header .logo {
-    width: 80px; /* Larger logo */
+    width: 80px;
     height: auto;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     border-radius: 50%; /* Make logo round */
     border: 3px solid var(--color-light);
     box-shadow: var(--box-shadow-sm);
@@ -280,7 +290,7 @@ main h2 {
 
 .song-cover {
     width: 100%;
-    max-width: 200px; /* Max width for cover image */
+    max-width: 100px; /* Max width for cover image */
     height: auto;
     border-radius: var(--border-radius-md);
     margin-bottom: 15px;

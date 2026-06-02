@@ -9,12 +9,12 @@
 }
 
 body {
-    font-family: 'Narkiss Tam', 'Narkis Tam', 'Trebuchet MS', sans-serif;
+    font-family: Bobo Ffa Font, sans-serif;
     background-color: var(--bg-main);
     color: var(--text-primary);
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 2;
 }
 
 .container {
@@ -293,6 +293,66 @@ caption {
     width: 100%;
     border-radius: 8px;
     border: 3px solid var(--border-color);
+}
+
+.song-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Increased gap */
+    margin-top: 20px;
+}
+
+/* Song Card styles */
+.song-card {
+    background-color: var(--color-light);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--border-radius-lg); /* More rounded corners */
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--box-shadow-md);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.song-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.song-cover {
+    width: 100%;
+    max-width: 100px; /* Max width for cover image */
+    height: auto;
+    border-radius: var(--border-radius-md);
+    margin-bottom: 15px;
+    border: 2px solid var(--color-primary);
+    box-shadow: var(--box-shadow-sm);
+}
+
+.song-card h3 {
+    font-size: var(--font-size-h4);
+    margin-bottom: 5px;
+    color: var(--color-dark);
+}
+
+.song-card .artist-name {
+    font-size: var(--font-size-sm);
+    color: var(--color-secondary);
+    margin-bottom: 15px;
+}
+
+.song-card .play-button {
+    width: 100%;
+    max-width: 150px;
+    padding: 10px 20px;
+    font-size: var(--font-size-base);
+    background-color: var(--color-success); /* Use success color for play button */
+}
+
+.song-card .play-button:hover {
+    background-color: #218838; /* Manual darken */
 }
 
 @media (max-width: 600px) {

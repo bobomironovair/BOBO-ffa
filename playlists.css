@@ -1,4 +1,11 @@
 
+@font-face {
+    font-family: 'Bobo Ffa Font';
+    src: url('fonts/BoboFfaFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root
 {
     --bg-main: #fcfcfc;
@@ -12,12 +19,13 @@
     --transition: all 0.3s ease;
 }
 
-body
-{
-    font-family: 'Narkiss Tam', sans-serif;
-    background-color: #f4f4f4;
+body {
+            font-family: Bobo Ffa Font, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    line-height: 2;
 }
 
 nav {

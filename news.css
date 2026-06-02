@@ -14,15 +14,12 @@
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: var(--font-family);
-    font-size: var(--font-size);
-    font-weight: var(--font-weight);
-    line-height: var(--line-height);
-    letter-spacing: var(--letter-spacing);
+            font-family: Bobo Ffa Font, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    line-height: 2;
 }
 .container {
     width: 80%;

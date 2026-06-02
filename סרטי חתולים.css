@@ -11,12 +11,13 @@
 }
 
 body {
-            font-family: 'Narkiss Tam', 'Narkis Tam', sans-serif;
-            background-color: var(--bg-main);
-            margin: 0;
-            padding: 20px;
-            color: var(--text-primary);
-        }
+            font-family: Bobo Ffa Font, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 20px;
+    line-height: 2;
+}
         .container {
             max-width: 1200px;
             margin: 0 auto;

@@ -10,11 +10,15 @@
 }
 
 body {
-            font-family: 'Narkiss Tam', 'Narkis Tam', 'Trebuchet MS', sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-primary);
-            margin: 0;
-            padding: 20px;
+            font-family: Bobo Ffa Font, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 20px;
+    line-height: 2;
+}
+h1 {
+    text-align: center
         }
         .container {
             max-width: 1200px;
