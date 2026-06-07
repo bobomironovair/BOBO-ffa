@@ -140,26 +140,3 @@ main ul li a:hover
 {
     text-decoration: underline;
 }
-
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 2.5rem;
-    }
-    .video-card {
-        padding: 15px;
-    }
-    .content-grid {
-        grid-template-columns: 1fr;
-    }
-}
-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}

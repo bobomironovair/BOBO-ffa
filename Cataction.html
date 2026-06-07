@@ -1,11 +1,20 @@
-﻿﻿<!DOCTYPE html>
+﻿﻿﻿﻿<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cataction - Bobo FFA</title>
     <link rel="stylesheet" href="Cataction.css">
     <style>
+        @font-face {
+            font-family: 'Bobo Ffa Font';
+            src: url('fonts/BoboFfaFont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            font-family: 'Bobo Ffa Font', sans-serif;
+        }
         .controls {
             margin-top: 10px;
             display: flex;
@@ -52,6 +61,19 @@
             height: auto;
             display: block;
         }
+        @media (max-width: 768px) {
+            .main-nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+            }
+            .nav-link {
+                width: 100%;
+                text-align: center;
+                padding: 8px;
+            }
+            .container { padding: 15px; }
+        }
     </style>
 </head>
 <body>
@@ -65,14 +87,59 @@
         <a href="שיתופי פעולה.html" class="nav-link">שיתופי פעולה</a>
         <a href="סרטוני טיולים.html" class="nav-link">טיולים</a>
         <a href="playlists.html" class="nav-link">פלייליסטים</a>
+        <a href="news.html" class="nav-link">חדשות</a>
+        <a href="שירים מלאים.html" class ="nav-link">שירים מלאים</a>
     </nav>
-    <header>
-        <div class="container">
-            <h1>Bobo FFA</h1>
-            <p class="tagline">Fine Funniest Animation</p>
-        </div>
-    </header>
     <main class="container">
+        <section>
+            <h2>הפלייליסט שלנו</h2>
+            <div class="song-grid">
+                <!-- Song Card 1 -->
+                <div class="song-card">
+                    <img src="Album.png" alt="שיר 1" class="song-cover">
+                    <h3>All of the ways</h3>
+                    <p>BOBO FFA</p>
+                    <button class="play-button">נגן</button>
+                    <audio id="audio1" src="All of the ways.mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <!-- Song Card 2 -->
+                <div class="song-card">
+                    <img src="Album.png" alt="שיר 2" class="song-cover">
+                    <h3>Music for Tourism</h3>
+                    <p>BOBO FFA</p>
+                    <button class="play-button">נגן</button>
+                    <audio id="audio2" src="Music for Tourism.mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+        </section>
+
+        <section class="intro">
+            <h2>Lollipop Cataction</h2>
+            <div class="video-wrapper">
+                <video id="lollipopVideo" controls>
+                    <source src="Lollipop Cataction.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+        </section>
+        <section class="intro">
+            <h2>The Jentel Cat</h2>
+            <div class="video-wrapper">
+                <video id="The Jentel Cat" controls>
+                    <source src="The Jentel Cat.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+            <div class="controls">
+                <button onclick="playVideo('The Jentel Cat')">▶ Play</button>
+                <button onclick="pauseVideo('The Jentel Cat')">⏸ Pause</button>
+                <button onclick="stopVideo('The Jentel Cat')">⏹ Stop</button>
+            </div>
+        </section>
         <section class="intro">
             <h2>Paper cat</h2>
             <div class="video-wrapper">
@@ -87,7 +154,6 @@
                 <button onclick="stopVideo('Paper cat')">⏹ Stop</button>
             </div>
         </section>
-        <main class="container">
         <section class="intro">
             <h2>Lollipop Cats</h2>
             <div class="video-wrapper">
@@ -102,8 +168,6 @@
                 <button onclick="stopVideo('lollipopVideo')">⏹ Stop</button>
             </div>
         </section>
-    </main>
-    <main class="container">
         <section class="video-card">
             <h2>מופע מרכזי: הפרעת קצב</h2>
             <p class="watch-text">⏯ לחץ כאן לצפייה בסרטון</p>
@@ -233,12 +297,46 @@
         }
         
         setInterval(drawBackground, 1000);
-        document.addEventListener('animationend', (event) => {
-            if (event.animationName === 'fadeIn') {
-                event.target.style.animation = 'fadeOut 1s forwards';
-            } else if (event.animationName === 'fadeOut') {
-                event.target.style.animation = '';
+
+        // Video control functions
+        function playVideo(videoId) {
+            const video = document.getElementById(videoId);
+            if (video) video.play();
+        }
+
+        function pauseVideo(videoId) {
+            const video = document.getElementById(videoId);
+            if (video) video.pause();
+        }
+
+        function stopVideo(videoId) {
+            const video = document.getElementById(videoId);
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
             }
+        }
+
+        // Audio control logic
+        document.querySelectorAll('.play-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const audio = button.parentElement.querySelector('audio');
+                
+                if (audio.paused) {
+                    // Stop any other song that might be playing
+                    document.querySelectorAll('audio').forEach(a => {
+                        a.pause();
+                        const otherBtn = a.parentElement.querySelector('.play-button');
+                        if (otherBtn) otherBtn.textContent = 'נגן';
+                    });
+
+                    audio.play();
+                    button.textContent = 'השהה';
+                } else {
+                    audio.pause();
+                    button.textContent = 'נגן';
+                }
+            });
         });
     </script>
     <footer>

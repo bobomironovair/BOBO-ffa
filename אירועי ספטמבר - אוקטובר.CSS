@@ -9,13 +9,14 @@
 }
 
 body {
-            font-family: Bobo Ffa Font, sans-serif;
+    font-family: 'Boboffafontr', sans-serif;
     background-color: var(--bg-main);
     color: var(--text-primary);
     margin: 0;
-    padding: 20px;
-    line-height: 2;
+    padding: 0;
+    line-height: 1.6;
 }
+
 
 .container {
     max-width: 1000px;
@@ -158,26 +159,4 @@ footer {
     border-top: 4px solid var(--border-color);
     font-size: 0.9rem;
     font-weight: bold;
-}
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 2.5rem;
-    }
-    .video-card {
-        padding: 15px;
-    }
-    .content-grid {
-        grid-template-columns: 1fr;
-    }
-}
-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
 }
