@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Boboffafont-Regular';
+    src: url('fonts/Boboffafont-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --font-main: 'Boboffafont-Regular', Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+}

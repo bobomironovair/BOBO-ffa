@@ -1,6 +1,7 @@
+
 @font-face {
-    font-family: 'Bobo Ffa Font';
-    src: url('fonts/BoboFfaFont.ttf') format('truetype');
+    font-family: 'Boboffafont-Regular';
+    src: url('fonts/Boboffafont-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -43,12 +44,12 @@
 }
 
 body {
-            font-family: Bobo Ffa Font, sans-serif;
-    background-color: var(--bg-main);
+    font-family: 'Boboffafont-Regular', sans-serif;
+    background-color: var(--background-color);
     color: var(--text-primary);
     margin: 0;
-    padding: 20px;
-    line-height: 2;
+    padding: 0;
+    line-height: 1.6;
 }
 h1, h2, h3, h4, h5, h6 {
     color: var(--color-primary);
@@ -374,5 +375,12 @@ main h2 {
 
     .song-card .play-button {
         max-width: 100%;
+    }
+    nav {
+        padding: 15px 5px;
+    }
+    nav a {
+        margin: 5px;
+        font-size: var(--font-size-sm);
     }
 }

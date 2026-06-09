@@ -2,7 +2,7 @@
 <html lang="he" dir="rtl">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Playlists - Bobo FFA</title>
     <link rel="stylesheet" href="playlists.css">
     <link rel="canonical" href="https://www.boboffa.co.il/playlists.html">
@@ -35,7 +35,6 @@
                     <a href="https://music.youtube.com/playlist?list=PLG5S1cXoV-2HbSsULpHuwQKLvvD6hkRev&si=2Hsyrc21iBKIxEU2" class="btn">צפייה ב-YouTube</a>
                 </div>
             </div>
-            <script type="module" src="playlists music show.js"></script>
 
             <div class="card" data-playlist="PLG5S1cXoV-2HXFKe2--SZisx4HLd0li_Q">
                 <div class="wallpaper"></div>
@@ -44,8 +43,6 @@
                     <p>אוסף מוזיקה נבחרת</p>
                     <a href="https://music.youtube.com/playlist?list=PLG5S1cXoV-2HXFKe2--SZisx4HLd0li_Q&si=alU-xHmiOAobLU94" class="btn">צפייה ב-YouTube</a>
                 </div>
-            </div>
-            <script type="module" src="playlists music show#2.js"></script>
 
             <div class="card" data-playlist="PLG5S1cXoV-2G_Zd8lybU9Tf3xBkb_-iZR">
                 <div class="wallpaper"></div>
@@ -54,8 +51,6 @@
                     <p>הפרק השלישי בסדרה</p>
                     <a href="https://music.youtube.com/playlist?list=PLG5S1cXoV-2G_Zd8lybU9Tf3xBkb_-iZR&si=ul3dMDfxiibJVzZt" class="btn">צפייה ב-YouTube</a>
                 </div>
-            </div>
-            <script type="module" src="playlists music show#3.js"></script>
 
             <div class="card" data-playlist="PLG5S1cXoV-2FEhcZbHz8STAumYk3jA0-v">
                 <div class="wallpaper"></div>
@@ -64,8 +59,6 @@
                     <p>התחלה חדשה לעונה הבאה</p>
                     <a href="https://music.youtube.com/playlist?list=PLG5S1cXoV-2FEhcZbHz8STAumYk3jA0-v&si=m-3SOlLHfeJq6_ho" class="btn">צפייה ב-YouTube</a>
                 </div>
-            </div>
-            <script type="module" src="playlists music show#4.js"></script>
 
 
             <div class="card" data-playlist="PLG5S1cXoV-2HPnsTyWqtx7CCPFlB3Pd5a">
@@ -76,7 +69,12 @@
                     <a href="https://music.youtube.com/playlist?list=PLG5S1cXoV-2HPnsTyWqtx7CCPFlB3Pd5a&si=2_ifOxXv_IASsA82" class="btn">צפייה ב-YouTube</a>
                 </div>
             </div>
-            <script type="module" src="playlists music show#5.js"></script>
+            <div class="card">
+                <div class="wallpaper" style="background-color: #FF6B6B;"></div> <!-- Fallback color -->
+                <div class="card-content">
+                    <h3>My Playlist music</h3>
+                    <p>הפלייליסט האישי שלי</p>
+                    <a href="שירים מלאים.html" class="btn">שירים מלאים</a>
                 </div>
             </div>
         </div>
@@ -115,7 +113,13 @@
             });
         }
 
-        loadPlaylistWallpapers();
+        loadPlaylistWallpapers(); // Call the function to load wallpapers
     </script>
+    <!-- Consolidated script imports at the end of body -->
+    <script type="module" src="playlists music show.js"></script>
+    <script type="module" src="playlists music show#2.js"></script>
+    <script type="module" src="playlists music show#3.js"></script>
+    <script type="module" src="playlists music show#4.js"></script>
+    <script type="module" src="playlists music show#5.js"></script>
 </body>
 </html>

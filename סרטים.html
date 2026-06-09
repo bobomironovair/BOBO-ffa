@@ -29,7 +29,7 @@
         <section class="video-card">
             <h2>סרטי קולנוע: סרט חתולים 1</h2>
             <p class="watch-text">⏯ לחץ כאן לצפייה בסרטון</p>
-            <div class="video-wrapper">
+            <div class="video-wrapper" id="movie1VideoWrapper">
                 <video id="video1" controls poster="cataction 2.png">
                     <source src="Cataction.mp4" type="video/mp4">
                     הדפדפן שלך לא תומך בנגן הוידאו.
@@ -103,41 +103,9 @@
         </section>
     </main>
     <script>
-        function playVideo(videoId) {
-            document.getElementById(videoId).play();
-        }
-
-        function pauseVideo(videoId) {
-            document.getElementById(videoId).pause();
-        }
-
-        function stopVideo(videoId) {
-            document.getElementById(videoId).pause();
-            document.getElementById(videoId).currentTime = 0;
-        }
     </script>
     <canvas id="backgroundCanvas"></canvas>
     <script>
-        const canvas = document.getElementById('backgroundCanvas');
-        const ctx = canvas.getContext('2d');
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-
-        function drawBackground() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            const x = Math.random() * canvas.width;
-            const y = Math.random() * canvas.height;
-            const size = 30 + Math.random() * 50;
-            ctx.fillStyle = `rgba(255, 105, 180, ${Math.random()})`;
-            ctx.beginPath();
-            ctx.arc(x, y, size / 2, 0, Math.PI * 2);
-            ctx.fill();
-        }
-        setInterval(drawBackground, 1000);
     </script>
     <footer>
         <p>&copy; 2026 Bobo FFA - All Cats Reserved</p>

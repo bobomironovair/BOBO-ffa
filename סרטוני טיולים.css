@@ -1,5 +1,7 @@
 @font-face {
     font-family: 'Boboffafont-Regular';
+    font-weight: normal;
+    font-style: normal;
     src: url('fonts/Boboffafont-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -23,6 +25,7 @@ body {
     color: var(--text-primary);
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 header {
     background-color: var(--accent-blue);
@@ -443,51 +446,15 @@ a.nav-link.active {
     display: none;
 }
 
-script {
-    display: none;
-    color: #0086f4;
-    contain-intrinsic-block-size: var(--accent-blue);
-    contain-intrinsic-inline-size: var(--accent-blue);
-}
-track {
-    display: none;
-    contain-intrinsic-block-size: var(--accent-blue)
-    contain-intrinsic-inline-size var(--accent-blue);
-}
-
-fuction {
-    display: none;
-    border-color: blue;
-}
-
-canvas
-{
-    display: none;
-    border-color: blue;
-    contain-intrinsic-inline-size: var(--accent-blue);
-    contain-intrinsic-block-size: var(--accent-blue);
-}
-
 .button {
-    display: none;
-    border-color: blue;
-    box-sizing: border-box;
-    contain-intrinsic-inline-size: var(--accent-blue);
-    contain-intrinsic-block-size: var(--accent-blue);
-}
-
-.button:hover {
-    display: none;
-    border-color: blue;
-    box-sizing: 20px;
-    contain-intrinsic-inline-size: var(--transition);
-    contain-intrinsic-block-size: var(--transition);
-    color: aquamarine;
-}
-
-.button:active {
-    display: none;
-    border-color: blue;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--accent-blue);
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    cursor: pointer;
 }
 
 .video-card .video-wrapper {
@@ -549,4 +516,27 @@ canvas
         gap: 15px;
     }
     
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    .video-card {
+        padding: 15px;
+    }
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }

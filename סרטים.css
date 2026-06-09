@@ -1,13 +1,15 @@
 @font-face {
     font-family: 'Boboffafont-Regular';
+    font-weight: normal;
+    font-style: normal;
     src: url('fonts/Boboffafont-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 :root {
-    --bg-main: #f4ead5;
-    --bg-card: #eee0c5;
+    --background-color: #f4ead5;
+    --card-background-color: #eee0c5;
     --accent-orange: #d35400;
     --accent-gold: #fbc02d;
     --text-primary: #3e2723;
@@ -18,18 +20,20 @@
 
 body {
     font-family: 'Boboffafont-Regular', sans-serif;
-    background-color: var(--bg-main);
+    background-color: var(--background-color);
     color: var(--text-primary);
     margin: 0;
     padding: 0;
     line-height: 1.6;
 }
-
+h1 {
+    text-align: center
+        }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 30px;
-            background-color: var(--bg-card);
+            background-color: var(--card-background-color);
             border: 4px solid var(--border-color);
             border-radius: 30px;
             box-shadow: 12px 12px 0px var(--text-secondary);
@@ -52,7 +56,7 @@ header h1 {
 }
 .tagline {
     font-style: italic;
-    color: var(--bg-main);
+    color: var(--background-color);
     font-weight: bold;
 }
 .controls button {
@@ -227,7 +231,7 @@ button main:active {
     max-width: 1200px;
     margin: 0 auto;
     padding: 30px;
-    background-color: var(--bg-card);
+    background-color: var(--card-background-color);
     border: 4px solid var(--border-color);
     border-radius: 30px;
     box-shadow: 12px 12px 0px var(--text-secondary);
@@ -318,4 +322,27 @@ img.logo-img {
     transform: scale(1.1);
     transition: var(--transition);
     size-adjust: right;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+    .video-card {
+        padding: 15px;
+    }
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }

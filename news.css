@@ -1,9 +1,19 @@
+
+@font-face {
+    font-family: 'Boboffafont-Regular';
+    font-weight: normal;
+    font-style: normal;
+    src: url('fonts/Boboffafont-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --primary-color: #ff6f61;
     --secondary-color: #333;
     --background-color: #fff;
     --text-color: #333;
-    --font-family: 'Arial', sans-serif;
+    --font-family: 'Boboffafont-Regular', Arial, Helvetica, sans-serif;
     --font-size: 16px;
     --font-weight: 400;
     --line-height: 1.5;
@@ -14,13 +24,14 @@
 }
 
 body {
-            font-family: Bobo Ffa Font, sans-serif;
-    background-color: var(--bg-main);
-    color: var(--text-primary);
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
-    padding: 20px;
-    line-height: 2;
+    padding: 0;
+    line-height: 1.6;
 }
+
 .container {
     width: 80%;
     margin: 0 auto;
@@ -162,6 +173,14 @@ button {
     font-size: 16px;
     cursor: pointer;
 }
+button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
     transition: var(--transition);
     box-shadow: var(--box-shadow);
 }
@@ -169,5 +188,3 @@ button {
 button:hover {
     background-color: var(--secondary-color);
 }
-
-

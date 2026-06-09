@@ -27,7 +27,7 @@
     <main class="container">
         <section class="intro">
             <h2>The Jentel Cat</h2>
-            <div class="video-wrapper">
+            <div class="video-wrapper" id="theJentelCatVideoWrapper">
                 <video id="The Jentel Cat" controls>
                     <source src="The Jentel Cat.mp4" type="video/mp4">
                     הדפדפן שלך לא תומך בנגן הוידאו.
@@ -39,12 +39,20 @@
                 <button onclick="stopVideo('The Jentel Cat')">⏹ Stop</button>
             </div>
         </section>
+                </section>
+        <section class="intro">
+            <h1>Lollipop Cats 2</h1>
+            <div class="video-wrapper" id="LollipopCats2VideoWrapper">
+                <video id="Lollipop Cats 2" controls>
+                    <source src="Lollipop Cats 2.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
         </section>
-    </main>
-    <main class="container">
+        
         <section class="intro">
             <h2>סרטי קולנוע: סרט חתולים</h2>
-            <div class="video-wrapper">
+            <div class="video-wrapper" id="paperCatVideoWrapper">
                 <video id="Paper cat" controls>
                     <source src="Paper cat.mp4" type="video/mp4">
                     הדפדפן שלך לא תומך בנגן הוידאו.
@@ -56,10 +64,9 @@
                 <button onclick="stopVideo('Paper cat')">⏹ Stop</button>
             </div>
         </section>
-    <main class="container">
         <section class="intro">
             <h2>Lollipop Cats</h2>
-            <div class="video-wrapper">
+            <div class="video-wrapper" id="lollipopCatsVideoWrapper">
                 <video id="lollipopVideo" controls>
                     <source src="Lollipop Cats.mp4" type="video/mp4">
                     הדפדפן שלך לא תומך בנגן הוידאו.
@@ -71,8 +78,6 @@
                 <button onclick="stopVideo('lollipopVideo')">⏹ Stop</button>
             </div>
         </section>
-    </main>
-    <main class="container">
         <section class="video-card">
             <h2>סרטי קולנוע: סרט חתולים 1</h2>
             <p class="watch-text">⏯ לחץ כאן לצפייה בסרטון</p>
@@ -152,18 +157,5 @@
     <footer>
         <p>&copy; 2026 Bobo FFA - All Cats Reserved</p>
     </footer>
-    <script>
-        function playVideo(videoId) {
-            document.getElementById(videoId).play();
-        }
-        function pauseVideo(videoId) {
-            document.getElementById(videoId).pause();
-        }
-        function stopVideo(videoId) {
-            const video = document.getElementById(videoId);
-            video.pause();
-            video.currentTime = 0;
-        }
-    </script>
 </body>
 </html>
