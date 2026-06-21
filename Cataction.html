@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="Cataction.css">
     <style>
+        /* optional basic styling for the clock */ 
+        #currentTime {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            font-size: 18px;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
         .controls {
             margin-top: 10px;
             display: flex;
@@ -67,8 +79,51 @@
             .container { padding: 15px; }
         }
     </style>
+    <!-- javascript  to fetch and update the clock -->
+    
 </head>
 <body>
+    <div class=" clock container">
+        <time id="currentTime"></time>
+    </div class= "Clock container">
+    Current Time: <span id="live-clock"></span>
+    <span id="hrs00">00</span>
+    <span>:</span>
+    <span id="min00">00</span>
+    <span>:</span>
+    <span id="sec00">00</span>
+    <span>|</span>
+    <span id="date00">00/00/0000</span>
+    <span>|</span>
+    <span id="day00">יום</span>
+    <span>|</span>
+    <span id="month00">חודש</span>
+    <span>|</span>
+    <span id="year00">שנה</span>
+    </div>
+    "
+    </div>
+    <script>
+        let hrs = document.getElementById("hrs00");
+        let min = document.getElementById("min00");
+        let sec = document.getElementById("sec00");
+
+        function updateClock() {
+            let currentTime = new Date();
+            hrs.innerHTML = currentTime.getHours() < 10 ? '0' + currentTime.getHours() :
+            currentTime.getHours();
+            min.innerHTML = currentTime.getMinutes() < 10 ? '0' + currentTime.getMinutes() :
+            currentTime.getMinutes();
+            sec.innerHTML = currentTime.getSeconds() < 10 ? '0' + currentTime.getSeconds() : 
+            currentTime.getSeconds();
+        }
+        
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+
+    <script src="BOBO FFA.js"></script>
+    
     <nav class="main-nav">
         <a href="Cataction.html" class="logo-link">
             <img src="Screenshot 2026-03-14 135433.png" alt="Bobo FFA Logo" class="logo-img">
@@ -110,13 +165,39 @@
             <!-- Song Card 3 -->
             <div class="song-card">
                 <img src="Album.png" alt="שיר 3" class="song-cover">
-                <h3>A Day in The Ride</h3>
+                <h3>Soundtrack Cats</h3>
                 <p>BOBO FFA</p>
                 <button class="play-button">נגן</button>
-                <audio id="audio3" src="A Day in The Ride.mp3">
+                <audio id="audio3" src="Soundtrack Cats.mp3">
                     Your browser does not support the audio element.
                 </audio>
             </div>
+                    <!-- Song Card 4 -->
+        <div class="song-card">
+            <h2>Music for Cooking</h2>
+            <img src="Album.png" alt="שיר 4" class="song-cover">
+            <p>BOBO FFA</p>
+            <button class="play-button">נגן</button>
+            <audio id="audio4" src="Music_for_Cooking.mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        </section>
+                    <section class="intro">
+            <h2>Lollipop Cats 3</h2>
+            <div class="video-wrapper" id="LollipopCats3VideoWrapper">
+                <video id="Lollipop Cats 3" controls>
+                    <source src="Lollipop Cats 3.mp4" type="video/mp4">
+                    הדפדפן שלך לא תומך בנגן הוידאו.
+                </video>
+            </div>
+            <div class="controls">
+                <button onclick="playVideo('Lollipop Cats 3')">▶ Play</button>
+                <button onclick="pauseVideo('Lollipop Cats 3')">⏸ Pause</button>
+                <button onclick="stopVideo('Lollipop Cats 3')">⏹ Stop</button>
+            </div>
+        </section>
+        </div>
         </section>
         <section class="intro">
             <h1>Lollipop Cats 2</h1>

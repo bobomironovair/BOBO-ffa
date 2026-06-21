@@ -8,6 +8,34 @@
     <link rel="canonical" href="https://www.boboffa.co.il/סרטוני טיולים.html">
 </head>
 <body>
+      <div class=" clock container">
+        <time id="currentTime"></time>
+    </div class= "Clock container">
+    Current Time: <span id="live-clock"></span>
+    <span id="hrs00">00</span>
+    <span>:</span>
+    <span id="min00">00</span>
+    <span>:</span>
+    <span id="sec00">00</span>
+    </div>
+    <script>
+        let hrs = document.getElementById("hrs00");
+        let min = document.getElementById("min00");
+        let sec = document.getElementById("sec00");
+
+        function updateClock() {
+            let currentTime = new Date();
+            hrs.innerHTML = currentTime.getHours() < 10 ? '0' + currentTime.getHours() :
+            currentTime.getHours();
+            min.innerHTML = currentTime.getMinutes() < 10 ? '0' + currentTime.getMinutes() :
+            currentTime.getMinutes();
+            sec.innerHTML = currentTime.getSeconds() < 10 ? '0' + currentTime.getSeconds() : 
+            currentTime.getSeconds();
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
     <nav class="main-nav">
         <a href="Cataction.html" class="logo-link">
             <img src="Screenshot 2026-03-14 135433.png" alt="Bobo FFA Logo" class="logo-img">
