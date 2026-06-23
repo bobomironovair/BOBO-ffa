@@ -7,6 +7,93 @@
     <link rel="stylesheet" href="אירועי ספטמבר - אוקטובר.CSS">
 </head>
 <body>
+        <script>
+        let hrs = document.getElementById("hrs00");
+        let min = document.getElementById("min00");
+        let sec = document.getElementById("sec00");
+        let date = document.getElementById("date00");
+        let month = document.getElementById("month00");
+        let year = document.getElementById("year00");
+
+        function updateClock() {
+            const currentTime = new Date();
+            hrs.innerHTML = currentTime.getHours().toString().padStart(2, '0');
+            min.innerHTML = currentTime.getMinutes().toString().padStart(2, '0');
+            sec.innerHTML = currentTime.getSeconds().toString().padStart(2, '0');
+        }
+
+        function updateDate() {
+            const currentTime = new Date();
+            date.innerHTML = currentTime.getDate().toString().padStart(2, '0');
+            month.innerHTML = (currentTime.getMonth() + 1).toString().padStart(2, '0');
+            year.innerHTML = currentTime.getFullYear();
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+        updateDate();
+        setInterval(updateDate, 1000);
+    </script>
+    <input type="date" id="currentdate">
+    <script>
+        document.getElementById(currentDate).valueAsDate = new Date
+    </script>
+
+                <div data-timezone="Europe/Zurich">
+                <h2>Zurich</h2>
+        <output>00:00:00</output>
+            </div>
+
+                        <div data-timezone="Europe/Paris">
+                <h2>Paris</h2>
+        <output>00:00:00</output>
+            </div>
+
+                        <div data-timezone="Europe/Madrid">
+                <h2>Madrid</h2>
+        <output>00:00:00</output>
+            </div>
+
+                                    <div data-timezone="Europe/Berlin">
+                <h2>Berlin</h2>
+        <output>00:00:00</output>
+            </div>
+
+                        <div data-timezone="Europe/Rome">
+                <h2>Rome</h2>
+        <output>00:00:00</output>
+            </div>
+
+            <div data-timezone="Asia/Jerusalem">
+                <h2>Jerusalem</h2>
+                <output>00:00:00</output>
+            </div>
+
+            <div data-timezone="Europe/London">
+                <h2>London</h2>
+                <output>00:00:00</output>
+            </div>
+
+<div data-timezone="Asia/Dubai">
+    <h2>Dubai</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Europe/Sofia">
+    <h2>Sofia</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Asia/Tokyo">
+    <h2>Tokyo</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Asia/Bangkok">
+    <h2>Bangkok</h2>
+    <output>00:00:00</output>
+</div>
+
     <nav class="main-nav">
         <a href="Cataction.html" class="logo-link">
             <img src="Screenshot 2026-03-14 135433.png" alt="Bobo FFA Logo" class="logo-img">

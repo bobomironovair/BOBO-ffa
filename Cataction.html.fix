@@ -1,0 +1,149 @@
+<!-- Local clock (your current timezone) -->
+<div class="clock container">
+    <h3>Current Time (Local)</h3>
+    <time id="currentTime"></time>
+    <div>
+        Current Time:
+        <span id="hrs00">00</span>:<span id="min00">00</span>:<span id="sec00">00</span>
+    </div>
+    <div>
+        Date:
+        <span id="date00">00</span>/<span id="month00">00</span>/<span id="year00">0000</span>
+    </div>
+    <input type="date" id="currentdate">
+</div>
+
+<!-- One block per city with a UNIQUE id per timezone -->
+<div data-timezone="Asia/Jerusalem" class="tz-clock">
+    <h1>Tel Aviv</h1>
+    <output id="tz-Asia-Jerusalem-1">00:00:00</output>
+</div>
+<div data-timezone="Europe/Zurich" class="tz-clock">
+    <h1>Zurich</h1>
+    <output id="tz-Europe-Zurich">00:00:00</output>
+</div>
+<div data-timezone="Europe/London" class="tz-clock">
+    <h1>London</h1>
+    <output id="tz-Europe-London">00:00:00</output>
+</div>
+<div data-timezone="America/New_York" class="tz-clock">
+    <h1>New York</h1>
+    <output id="tz-America-New_York-1">00:00:00</output>
+</div>
+<div data-timezone="America/Los_Angeles" class="tz-clock">
+    <h1>Los Angeles</h1>
+    <output id="tz-America-Los_Angeles">00:00:00</output>
+</div>
+<div data-timezone="Europe/Kyiv" class="tz-clock">
+    <h1>Kyiv</h1>
+    <output id="tz-Europe-Kyiv">00:00:00</output>
+</div>
+<div data-timezone="Europe/Rome" class="tz-clock">
+    <h1>Rome</h1>
+    <output id="tz-Europe-Rome-1">00:00:00</output>
+</div>
+<div data-timezone="Asia/Jerusalem" class="tz-clock">
+    <h1>Jerusalem</h1>
+    <output id="tz-Asia-Jerusalem-2">00:00:00</output>
+</div>
+<div data-timezone="Europe/Rome" class="tz-clock">
+    <h1>Milan</h1>
+    <output id="tz-Europe-Rome-2">00:00:00</output>
+</div>
+<div data-timezone="Europe/Berlin" class="tz-clock">
+    <h1>Berlin</h1>
+    <output id="tz-Europe-Berlin-1">00:00:00</output>
+</div>
+<div data-timezone="Europe/Lisbon" class="tz-clock">
+    <h1>Lisbon</h1>
+    <output id="tz-Europe-Lisbon">00:00:00</output>
+</div>
+<div data-timezone="Europe/Berlin" class="tz-clock">
+    <h1>Munich</h1>
+    <output id="tz-Europe-Berlin-2">00:00:00</output>
+</div>
+<div data-timezone="Europe/Sofia" class="tz-clock">
+    <h1>Sofia</h1>
+    <output id="tz-Europe-Sofia">00:00:00</output>
+</div>
+<div data-timezone="Europe/Paris" class="tz-clock">
+    <h1>Paris</h1>
+    <output id="tz-Europe-Paris">00:00:00</output>
+</div>
+<div data-timezone="Europe/Madrid" class="tz-clock">
+    <h1>Madrid</h1>
+    <output id="tz-Europe-Madrid">00:00:00</output>
+</div>
+<div data-timezone="America/New_York" class="tz-clock">
+    <h1>Washington</h1>
+    <output id="tz-America-New_York-2">00:00:00</output>
+</div>
+
+<script>
+(function () {
+    // ---- Local clock (uses the user's actual timezone) ----
+    const hrs   = document.getElementById("hrs00");
+    const mins  = document.getElementById("min00");
+    const secs  = document.getElementById("sec00");
+    const dateEl  = document.getElementById("date00");
+    const monthEl = document.getElementById("month00");
+    const yearEl  = document.getElementById("year00");
+    const dateInput = document.getElementById("currentdate");
+
+    function pad(n) { return n.toString().padStart(2, "0"); }
+
+    function updateLocalClock() {
+        const now = new Date();
+        if (hrs)   hrs.textContent   = pad(now.getHours());
+        if (mins)  mins.textContent  = pad(now.getMinutes());
+        if (secs)  secs.textContent  = pad(now.getSeconds());
+        if (dateEl)  dateEl.textContent  = pad(now.getDate());
+        if (monthEl) monthEl.textContent = pad(now.getMonth() + 1);
+        if (yearEl)  yearEl.textContent  = now.getFullYear();
+    }
+
+    updateLocalClock();
+    setInterval(updateLocalClock, 1000);
+
+    // Set the <input type="date"> to today (no Date shadowing!)
+    if (dateInput) {
+        const y = now.getFullYear();
+        const m = pad(now.getMonth() + 1);
+        const d = pad(now.getDate());
+        dateInput.value = y + "-" + m + "-" + d;
+    }
+
+    // ---- Multi-timezone clocks (uses Intl.DateTimeFormat) ----
+    // Cache a formatter per timezone for performance.
+    const formatters = {};
+    function getFormatter(tz) {
+        if (!formatters[tz]) {
+            formatters[tz] = new Intl.DateTimeFormat("en-GB", {
+                timeZone: tz,
+                hour12: false,
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit"
+            });
+        }
+        return formatters[tz];
+    }
+
+    function updateTimezones() {
+        const now = new Date();
+        document.querySelectorAll(".tz-clock").forEach(function (el) {
+            const tz = el.getAttribute("data-timezone");
+            const out = el.querySelector("output");
+            if (!tz || !out) return;
+            try {
+                out.textContent = getFormatter(tz).format(now);
+            } catch (e) {
+                out.textContent = "invalid tz";
+            }
+        });
+    }
+
+    updateTimezones();
+    setInterval(updateTimezones, 1000);
+})();
+</script>
