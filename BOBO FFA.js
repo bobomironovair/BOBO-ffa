@@ -96,61 +96,63 @@ const BoboFFA = () => {
 
     }, []);
 
+    useEffect(() => {
+        const updateDateTime = () => {
+            const now = new Date();
+            const hours2 = now.getHours().toString().padStart(2, '0');
+            const minutes2 = now.getMinutes().toString().padStart(2, '0');
+            const seconds2 = now.getSeconds().toString().padStart(2, '0');
+            const day = now.getDate().toString().padStart(2, '0');
+            const month = (now.getMonth() + 1).toString().padStart(2, '0');
+            const year = now.getFullYear();
+            const timeElement = document.getElementById('currentTime');
+            const dateElement = document.getElementById('currentDate');
+            const tzElement = document.getElementById('currentTimeZone');
+
+            if (timeElement) {
+                timeElement.textContent = `${hours2}:${minutes2}:${seconds2}`;
+            }
+            if (dateElement) {
+                dateElement.textContent = `${day}/${month}/${year}`;
+            }
+            if (tzElement) {
+                tzElement.textContent = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            }
+        };
+
+        const updateTimes = function ( ) {
+            locations.forEach{location => {
+                const output = location.querySelector(output)
+                const timezone = location.getAttribute("data-timezone")
+
+                const now = luxon.DateTime.now( ) .setZone ("Europe/Zurich")
+                output.innerHTML = now.toFormat ("HH:mm:ss")
+            }}
+        }
+
+        updateTimes( )
+
+        setInterval(function () {
+            updateTimes () 
+        } , 1000
+
+
+        updateDateTime();
+        const interval = setInterval(updateDateTime, 1000);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div>
             <canvas ref={canvasRef} style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }} />
             <video id="video1" src="path_to_video.mp4" style={{ display: 'none' }} />
             <audio id="audio1" src="path_to_audio.mp3" style={{ display: 'none' }} />
+            <div id="currentTime" style={{ color: '#fff', fontSize: '2rem' }}>00:00:00</div>
+            <div id="currentDate" style={{ color: '#fff', fontSize: '1rem' }}>00/00/0000</div>
+            <div id="currentTimeZone" style={{ color: '#fff', fontSize: '1rem' }}>Loading timezone...</div>
             {/* Add your UI components here */}
         </div>
     );
-}
-
-let hours = new Date().getHours();
-if (hours >= 0 && hours < 6) {
-    document.body.style.backgroundColor = "#000000";
-} else if (hours >= 6 && hours < 12) {
-    document.body.style.backgroundColor = "#87CEEB";
-} else if (hours >= 12 && hours < 18) {
-    document.body.style.backgroundColor = "#FFD700";
-} else {
-    document.body.style.backgroundColor = "#2F4F4F";
-}
-let minutes = new Date().getMinutes();
-if (minutes >= 0 && minutes < 15) {
-    document.body.style.backgroundColor = "#FF4500";
-}
-let seconds = new Date().getSeconds();
-if (seconds >= 0 && seconds < 30) {
-    document.body.style.backgroundColor = "#8A2BE2";
-} else {
-    document.body.style.backgroundColor = "#FF69B4";
-}
-
-const now = new Date();
-const hours2 = now.getHours().toString().padStart(2, '0');
-const minutes2 = now.getMinutes().toString().padStart(2, '0');
-const seconds2 = now.getSeconds().toString().padStart(2, '0');
-document.getElementById('currentTime').textContent = `${hours2}:${minutes2}:${seconds2}`;
-
-const hour = now.getHours();
-const minute = now.getMinutes();
-
-const second = now.getSeconds();
-
-const now = new Date();
-const day = now.getDate().toString().padStart(2, '0');
-const month = (now.getMonth() + 1).toString().padStart(2, '0');
-const year = now.getFullYear();
-document.getElementById('currentDate').textContent = `${day}/${month}/${year}`;
-
-// combine them into a costum 24-hour format
-const customTime = `${hour}:${minute}:${second}`;
-document.getElementById('currentTime').textContent = customTime;
-// combine them into a costum calendar format
-// Removed duplicate/broken effect and stray CSS text
-
-
+};
 
 export default BoboFFA;
-

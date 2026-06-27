@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿<!DOCTYPE html>
+﻿﻿﻿<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="utf-8">
@@ -132,6 +132,38 @@
         document.getElementById(currentDate).valueAsDate = new Date
     </script>
 
+    <div class="Weather-card">
+    <h2 id="location">Tel Aviv</h2>
+    <div id="weather-data"></div>
+    </div>
+
+    <script>
+        const apiKey = '4de8ebd472bfc60a74206f35707d5176';
+        const lat = '32.0853';
+        const lon = '34.7818';
+        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=he`;
+
+        async function fetchWeather() {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('שגיאה בטעינת הנתונים');
+
+                const data = await response.json();
+
+                document.getElementById('weather-data').innerHTML = `
+                    <div class="temp">${Math.round(data.main.temp)} °C</div>
+                    <div class="desc">${data.weather[0].description}</div>
+                `;
+            } catch (error) {
+                document.getElementById('weather-data').innerHTML = `<p style="color:red;">נכשל בטעינת הנתונים</p>`;
+                console.error(error);
+            }
+        }
+
+        // הפעלת הפונקציה בטעינת הדף
+        fetchWeather();
+    </script>
+
             <div data-timezone="Europe/Zurich">
                 <h2>Zurich</h2>
         <output>00:00:00</output>
@@ -187,6 +219,55 @@
     <output>00:00:00</output>
 </div>
 
+<div data-timezone="America/New_York">
+    <h2>New York</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="America/Los_Angeles">
+    <h2>Los Angeles</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Europe/Kyiv">
+    <h2>Kyiv</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Europe/Warsaw">
+    <h2>Warsaw</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Asia/Singapore">
+    <h2>Singapore</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="America/Toronto">
+    <h2>Toronto</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Europe/Bern">
+    <h2>Bern</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Europe/Marseille">
+    <h2>Marseille</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="America/Washington">
+    <h2>Washington</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Europe/Barcelona">
+    <h2>Barcelona</h2>
+    <output>00:00:00</output>
+</div>
 
     <nav class="main-nav">
         <a href="Cataction.html" class="logo-link">
