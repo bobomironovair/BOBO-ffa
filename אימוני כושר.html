@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אימוני כושר - Bobo FFA</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="אימוני כושר.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="Cataction.html" class="logo-link">
+            <img src="Screenshot 2026-03-14 135433.png" alt="Bobo FFA Logo" class="logo-img">
+        </a>
+        <a href="סרטים.html" class="nav-link">סרטים</a>
+        <a href="סרטי חתולים.html" class="nav-link">סרטי חתולים</a>
+        <a href="מופעים.html" class="nav-link">מופעים</a>
+        <a href="שיתופי פעולה.html" class="nav-link">שיתופי פעולה</a>
+        <a href="סרטוני טיולים.html" class="nav-link">טיולים</a>
+        <a href="playlists.html" class="nav-link">פלייליסטים</a>
+        <a href="news.html" class="nav-link">חדשות</a>
+        <a href="שירים מלאים.html" class ="nav-link">שירים מלאים</a>
+        <a href="אימוני כושר.html" class="nav-link active">אימוני כושר</a>
+    </nav>
+
+    <main class="container">
+        <article class="intro">
+            <h1>אימוני כושר</h1>
+            <p>ברוכים הבאים לדף האימונים שלנו! כאן תוכלו למצוא מגוון אימונים שמתאימים לכל רמה.</p>
+        </article>
+        <aside>
+            <video id="fitnessVideo" controls poster="fitness-poster.png">
+                <source src="אימון בחדר כושר - פרק 1.mp4" type="video/mp4">
+                הדפדפן שלך לא תומך בנגן הוידאו.
+            </video>
+            <div class="controls">
+                <button onclick="playVideo('fitnessVideo')">▶ Play</button>
+                <button onclick="pauseVideo('fitnessVideo')">⏸ Pause</button>
+                <button onclick="stopVideo('fitnessVideo')">⏹ Stop</button>
+            </div>
+        </aside>
+        <section class="video-details">
+            <h4>אימון בחדר כושר - פרק 1</h4>
+            <p>בפרק הזה אני מעביר לכם את האימון על המכשירים שרשומים בסרטון:
+            <br>
+            לחיצת חזה בשיפוע חיובי במכונה ייעודית
+            <br>
+            פולי עליון
+            <br>
+            פרפר בכבלים בעמידה
+            </p>
+        </section>
+    </main>
+
+    <script>
+        // Video control functions
+        function playVideo(videoId) {
+            const video = document.getElementById(videoId);
+            if (video) video.play();
+        }
+
+        function pauseVideo(videoId) {
+            const video = document.getElementById(videoId);
+            if (video) video.pause();
+        }
+
+        function stopVideo(videoId) {
+            const video = document.getElementById(videoId);
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2026 Bobo FFA - All Cats Reserved</p>
+    </footer>
+</body>
+</html>
