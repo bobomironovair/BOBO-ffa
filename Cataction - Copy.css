@@ -141,17 +141,6 @@ header h1 {
     background: var(--accent-blue);
 }
 
-.article {
-    margin-bottom: 30px;
-}
-.aside {
-    margin-bottom: 30px;
-}
-h4 {
-    color: var(--text-primary);
-    margin-bottom: 10px;
-}
-
 footer {
     text-align: center;
     padding: 40px;
