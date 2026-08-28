@@ -2,6 +2,7 @@
 <html lang="he" dir="rtl">
 <head>
     <meta charset="utf-8">
+    <!-- Responsive viewport metadata must remain in the document head -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cataction - Bobo FFA</title>
     <link rel="stylesheet" href="global.css">
@@ -127,9 +128,10 @@
         updateDate();
         setInterval(updateDate, 1000);
     </script>
-    <input type="date" id="currentdate">
+    <label for="currentdate">Current date:</label>
+    <input type="date" id="currentdate" title="Select the current date" placeholder="YYYY-MM-DD">
     <script>
-        document.getElementById(currentDate).valueAsDate = new Date
+        document.getElementById('currentdate').valueAsDate = new Date();
     </script>
 
     <div class="Weather-card">
@@ -138,7 +140,7 @@
     </div>
 
     <script>
-        const apiKey = '4de8ebd472bfc60a74206f35707d5176';
+        const apiKey = ''; // TODO: Add your OpenWeatherMap API key here
         const lat = '32.0853';
         const lon = '34.7818';
         const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=he`;
@@ -281,6 +283,7 @@
         <a href="playlists.html" class="nav-link">פלייליסטים</a>
         <a href="news.html" class="nav-link">חדשות</a>
         <a href="שירים מלאים.html" class ="nav-link">שירים מלאים</a>
+        <a href="אימוני כושר.html" class="nav-link">אימוני כושר</a>
     </nav>
     <main class="container">
         <section>
@@ -327,6 +330,23 @@
                 Your browser does not support the audio element.
             </audio>
         </div>
+        </aside>
+        <section>
+            <section class="intro">
+                <div class="video-wrapper" id="HowtomakePiewithCherry">
+                    <video id="How to make Pie with Cherry" controls poster="How to make Pie with Cherry - The Poster.png">
+                        <source src="How to make Pie with Cherry.mp4" type="video/mp4">
+                        הדפדפן שלך לא תומך בנגן הוידאו
+                    </video>
+                </div>
+                <div class="controls":>
+                    <button oneclick="playVideo('How to make Pie with Cherry')">play</button>
+                    <button oneclick="pauseVideo('How to make Pie with Cherry')">pause</button>
+                    <button oneclick="stopVideo('How to make Pie with Cherry')">stop</button>
+                </div>
+            </section>
+        </section>
+    </div>
         </section>
                     <section class="intro">
             <h2>Lollipop Cats 3</h2>
