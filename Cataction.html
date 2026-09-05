@@ -66,6 +66,9 @@
             height: auto;
             display: block;
         }
+        .playlist-link {
+            text-align: center;
+        }
         @media (max-width: 768px) {
             .main-nav {
                 flex-direction: column;
@@ -106,7 +109,7 @@
         let min = document.getElementById("min00");
         let sec = document.getElementById("sec00");
         let date = document.getElementById("date00");
-        let month = document.getElementById("month00");
+        let monthElement = document.getElementById("month00");
         let year = document.getElementById("year00");
 
         function updateClock() {
@@ -119,7 +122,7 @@
         function updateDate() {
             const currentTime = new Date();
             date.innerHTML = currentTime.getDate().toString().padStart(2, '0');
-            month.innerHTML = (currentTime.getMonth() + 1).toString().padStart(2, '0');
+            monthElement.innerHTML = (currentTime.getMonth() + 1).toString().padStart(2, '0');
             year.innerHTML = currentTime.getFullYear();
         }
 
@@ -140,33 +143,57 @@
     </div>
 
     <script>
-        const apiKey = ''; // TODO: Add your OpenWeatherMap API key here
         const lat = '32.0853';
         const lon = '34.7818';
-        const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric&lang=he`;
+        const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code&timezone=auto&forecast_days=1`;
+
+        function getWeatherDescription(code) {
+            const descriptions = {
+                0: 'בהיר', 1: 'רוב הזמן בהיר', 2: 'מעונן חלקית', 3: 'מעונן',
+                45: 'ערפל', 48: 'ערפל עם קרח', 51: 'טפטוף קל', 53: 'טפטוף',
+                55: 'טפטוף כבד', 56: 'טפטוף קר', 57: 'טפטוף קר כבד', 61: 'גשם קל',
+                63: 'גשם', 65: 'גשם כבד', 66: 'גשם קר', 67: 'גשם קר כבד',
+                71: 'שלג קל', 73: 'שלג', 75: 'שלג כבד', 77: 'קרח', 80: 'ממטרים',
+                81: 'ממטרים חזקים', 82: 'ממטרים קשים', 85: 'שלג קל', 86: 'שלג כבד',
+                95: 'סופת רעמים', 96: 'סופת רעמים עם ברד', 99: 'סופת רעמים עם ברד קשה'
+            };
+            return descriptions[code] || 'מזג אוויר';
+        }
 
         async function fetchWeather() {
             try {
-                const response = await fetch(url);
+                const response = await fetch(weatherUrl);
                 if (!response.ok) throw new Error('שגיאה בטעינת הנתונים');
 
                 const data = await response.json();
+                const current = data.current;
+                const temp = Number(current?.temperature_2m);
+                const description = getWeatherDescription(current?.weather_code);
 
                 document.getElementById('weather-data').innerHTML = `
-                    <div class="temp">${Math.round(data.main.temp)} °C</div>
-                    <div class="desc">${data.weather[0].description}</div>
+                    <div class="temp">${Number.isFinite(temp) ? Math.round(temp) : '--'} °C</div>
+                    <div class="desc">${description}</div>
                 `;
             } catch (error) {
-                document.getElementById('weather-data').innerHTML = `<p style="color:red;">נכשל בטעינת הנתונים</p>`;
+                document.getElementById('weather-data').innerHTML = '<p style="color:red;">נכשל בטעינת הנתונים</p>';
                 console.error(error);
             }
         }
 
-        // הפעלת הפונקציה בטעינת הדף
         fetchWeather();
     </script>
 
-            <div data-timezone="Europe/Zurich">
+    <input type="date" id="currentdate">
+    <script>
+        document.getElementById('currentdate').valueAsDate = new Date();
+    </script>
+
+    <div data-timezone="Asia/Tel_Aviv">
+        <h2>Tel Aviv</h2>
+        <output>00:00:00</output>
+    </div>
+
+                <div data-timezone="Europe/Zurich">
                 <h2>Zurich</h2>
         <output>00:00:00</output>
             </div>
@@ -221,13 +248,8 @@
     <output>00:00:00</output>
 </div>
 
-<div data-timezone="America/New_York">
-    <h2>New York</h2>
-    <output>00:00:00</output>
-</div>
-
-<div data-timezone="America/Los_Angeles">
-    <h2>Los Angeles</h2>
+<div data-timezone="Asia/Manila">
+    <h2>Manila</h2>
     <output>00:00:00</output>
 </div>
 
@@ -251,29 +273,62 @@
     <output>00:00:00</output>
 </div>
 
-<div data-timezone="Europe/Bern">
-    <h2>Bern</h2>
+<div data-timezone="America/New_York">
+    <h2>New York</h2>
     <output>00:00:00</output>
 </div>
 
-<div data-timezone="Europe/Marseille">
-    <h2>Marseille</h2>
+<div data-timezone="America/Los_Angeles">
+    <h2>Los Angeles</h2>
     <output>00:00:00</output>
 </div>
 
-<div data-timezone="America/Washington">
-    <h2>Washington</h2>
+<div data-timezone="Australia/Sydney">
+    <h2>Sydney</h2>
     <output>00:00:00</output>
 </div>
 
-<div data-timezone="Europe/Barcelona">
-    <h2>Barcelona</h2>
+<div data-timezone="Australia/Melbourne">
+    <h2>Melbourne</h2>
     <output>00:00:00</output>
 </div>
 
+<div data-timezone="Australia/West">
+    <h2>Western Australia</h2>
+    <output>00:00:00</output>
+</div>
+
+<script>
+    function updateTimezones() {
+        const timezoneElements = document.querySelectorAll('[data-timezone]');
+        timezoneElements.forEach(element => {
+            const timezone = element.getAttribute('data-timezone');
+            const now = new Date();
+            const options = { timeZone: timezone, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true};
+            const timeString = now.toLocaleTimeString('en-US', options);
+            element.querySelector('output').textContent = timeString;
+        });
+    }
+    setInterval(updateTimezones, 1000);
+    updateTimezones();
+    function updateTimezones() {
+        const timezoneElements = document.querySelectorAll('[data-timezone]');
+        timezoneElements.forEach(element => {
+            const timezone = element.getAttribute('data-timezone');
+            const now = new Date();
+            const options = { timeZone: timezone, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            const timeString = now.toLocaleTimeString('en-US', options);
+            element.querySelector('output').textContent = timeString;
+        });
+    }
+    setInterval(updateTimezones, 1000);
+    updateTimezones();
+</script>
+
+<div class="logo">
+    <img src="Screenshot 2026-03-14 135433.png" alt="Bobo FFA Logo" class="logo-img">
+</div>
     <nav class="main-nav">
-        <a href="Cataction.html" class="logo-link">
-            <img src="Screenshot 2026-03-14 135433.png" alt="Bobo FFA Logo" class="logo-img">
         </a>
         <a href="סרטים.html" class="nav-link">סרטים</a>
         <a href="סרטי חתולים.html" class="nav-link">סרטי חתולים</a>
@@ -601,6 +656,9 @@
         <p>&copy; 2026 Bobo FFA - All Cats Reserved</p>
     </footer>
     <script src="Cataction.js"></script>
-    <p style="text-align: center;">לפלייליסט של הסרטונים שלנו, בקרו ב<a href="playlist.html">עמוד הפלייליסט</a>.</p>
+    <p class="playlist-link">לפלייליסט של הסרטונים שלנו, בקרו ב<a href="playlist.html">עמוד הפלייליסט</a>.</p>
+</body>
+</html>
+ml">עמוד הפלייליסט</a>.</p>
 </body>
 </html>
