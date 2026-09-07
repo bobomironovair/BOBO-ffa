@@ -8,7 +8,7 @@
     <link rel="canonical" href="https://www.boboffa.co.il/מופעים.html">
 </head>
 <body>
-         <div class=" clock container">
+        <div class=" clock container">
         <time id="currentTime"></time>
     </div class= "Clock container">
     Current Time: <span id="live-clock"></span>
@@ -30,7 +30,7 @@
         let min = document.getElementById("min00");
         let sec = document.getElementById("sec00");
         let date = document.getElementById("date00");
-        let month = document.getElementById("month00");
+        let monthElement = document.getElementById("month00");
         let year = document.getElementById("year00");
 
         function updateClock() {
@@ -43,7 +43,7 @@
         function updateDate() {
             const currentTime = new Date();
             date.innerHTML = currentTime.getDate().toString().padStart(2, '0');
-            month.innerHTML = (currentTime.getMonth() + 1).toString().padStart(2, '0');
+            monthElement.innerHTML = (currentTime.getMonth() + 1).toString().padStart(2, '0');
             year.innerHTML = currentTime.getFullYear();
         }
 
@@ -52,10 +52,67 @@
         updateDate();
         setInterval(updateDate, 1000);
     </script>
+    <label for="currentdate">Current date:</label>
+    <input type="date" id="currentdate" title="Select the current date" placeholder="YYYY-MM-DD">
+    <script>
+        document.getElementById('currentdate').valueAsDate = new Date();
+    </script>
+
+    <div class="Weather-card">
+    <h2 id="location">Tel Aviv</h2>
+    <div id="weather-data"></div>
+    </div>
+
+    <script>
+        const lat = '32.0853';
+        const lon = '34.7818';
+        const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code&timezone=auto&forecast_days=1`;
+
+        function getWeatherDescription(code) {
+            const descriptions = {
+                0: 'בהיר', 1: 'רוב הזמן בהיר', 2: 'מעונן חלקית', 3: 'מעונן',
+                45: 'ערפל', 48: 'ערפל עם קרח', 51: 'טפטוף קל', 53: 'טפטוף',
+                55: 'טפטוף כבד', 56: 'טפטוף קר', 57: 'טפטוף קר כבד', 61: 'גשם קל',
+                63: 'גשם', 65: 'גשם כבד', 66: 'גשם קר', 67: 'גשם קר כבד',
+                71: 'שלג קל', 73: 'שלג', 75: 'שלג כבד', 77: 'קרח', 80: 'ממטרים',
+                81: 'ממטרים חזקים', 82: 'ממטרים קשים', 85: 'שלג קל', 86: 'שלג כבד',
+                95: 'סופת רעמים', 96: 'סופת רעמים עם ברד', 99: 'סופת רעמים עם ברד קשה'
+            };
+            return descriptions[code] || 'מזג אוויר';
+        }
+
+        async function fetchWeather() {
+            try {
+                const response = await fetch(weatherUrl);
+                if (!response.ok) throw new Error('שגיאה בטעינת הנתונים');
+
+                const data = await response.json();
+                const current = data.current;
+                const temp = Number(current?.temperature_2m);
+                const description = getWeatherDescription(current?.weather_code);
+
+                document.getElementById('weather-data').innerHTML = `
+                    <div class="temp">${Number.isFinite(temp) ? Math.round(temp) : '--'} °C</div>
+                    <div class="desc">${description}</div>
+                `;
+            } catch (error) {
+                document.getElementById('weather-data').innerHTML = '<p style="color:red;">נכשל בטעינת הנתונים</p>';
+                console.error(error);
+            }
+        }
+
+        fetchWeather();
+    </script>
+
     <input type="date" id="currentdate">
     <script>
-        document.getElementById(currentDate).valueAsDate = new Date
+        document.getElementById('currentdate').valueAsDate = new Date();
     </script>
+
+    <div data-timezone="Asia/Tel_Aviv">
+        <h2>Tel Aviv</h2>
+        <output>00:00:00</output>
+    </div>
 
                 <div data-timezone="Europe/Zurich">
                 <h2>Zurich</h2>
@@ -112,6 +169,11 @@
     <output>00:00:00</output>
 </div>
 
+<div data-timezone="Asia/Manila">
+    <h2>Manila</h2>
+    <output>00:00:00</output>
+</div>
+
 <div data-timezone="Europe/Kyiv">
     <h2>Kyiv</h2>
     <output>00:00:00</output>
@@ -131,6 +193,68 @@
     <h2>Toronto</h2>
     <output>00:00:00</output>
 </div>
+
+<div data-timezone="America/New_York">
+    <h2>New York</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="America/Los_Angeles">
+    <h2>Los Angeles</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Australia/Sydney">
+    <h2>Sydney</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Australia/Melbourne">
+    <h2>Melbourne</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Australia/West">
+    <h2>Western Australia</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Europe/Prague">
+    <h2>Prague</h2>
+    <output>00:00:00</output>
+</div>
+
+
+<div data-timezone="Europe/Oslo">
+    <h2>Oslo</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Africa/Cairo">
+    <h2>Cairo</h2>
+    <output>00:00:00</output>
+    </div>
+
+    <div data-timezone="Asia/Singapore">
+        <h2>Singapore</h2>
+        <output>00:00:00</output>
+    </div>
+
+        <script>
+            function updateClocks() {
+                const clockElements = document.querySelectorAll('div[data-timezone]');
+                clockElements.forEach(clockElement => {
+                    const timezone = clockElement.getAttribute('data-timezone');
+                    const now = new Date();
+                    const options = { timeZone: timezone, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12:true};
+                    const timeString = now.toLocaleTimeString('en-US', options);
+                    clockElement.querySelector('output').textContent = timeString;
+                });
+            }
+
+            setInterval(updateClocks, 1000);
+            updateClocks(); // Initial call to set the clocks immediately
+        </script>
 
     <nav class="main-nav">
         <a href="Cataction.html" class="logo-link">
@@ -182,7 +306,7 @@
                 <button id="likeBtnShows2" onclick="toggleLike('likeBtnShows2')" class="like-button">👍 Like</button>
             </div>
         </section>
-        השירים בפלייליסטים שלנו זמינים גם ב-YouTube Music! <a href="playlists.html" class="btn">צפייה בפלייליסטים</a>
+        השירים בפלייליסטים שלנו זמינים גם ב-YouTube Music! <a href="playlist.html" class="btn">צפייה בפלייליסטים</a>
     </main>
     <footer>
         <p>&copy; 2026 Bobo FFA - All Cats Reserved</p>
