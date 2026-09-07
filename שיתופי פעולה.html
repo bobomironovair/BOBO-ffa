@@ -223,32 +223,42 @@
     <output>00:00:00</output>
 </div>
 
-<script>
-    function updateTimezones() {
-        const timezoneElements = document.querySelectorAll('[data-timezone]');
-        timezoneElements.forEach(element => {
-            const timezone = element.getAttribute('data-timezone');
-            const now = new Date();
-            const options = { timeZone: timezone, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true};
-            const timeString = now.toLocaleTimeString('en-US', options);
-            element.querySelector('output').textContent = timeString;
-        });
-    }
-    setInterval(updateTimezones, 1000);
-    updateTimezones();
-    function updateTimezones() {
-        const timezoneElements = document.querySelectorAll('[data-timezone]');
-        timezoneElements.forEach(element => {
-            const timezone = element.getAttribute('data-timezone');
-            const now = new Date();
-            const options = { timeZone: timezone, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
-            const timeString = now.toLocaleTimeString('en-US', options);
-            element.querySelector('output').textContent = timeString;
-        });
-    }
-    setInterval(updateTimezones, 1000);
-    updateTimezones();
-</script>
+<div data-timezone="Europe/Prague">
+    <h2>Prague</h2>
+    <output>00:00:00</output>
+</div>
+
+
+<div data-timezone="Europe/Oslo">
+    <h2>Oslo</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Africa/Cairo">
+    <h2>Cairo</h2>
+    <output>00:00:00</output>
+    </div>
+
+    <div data-timezone="Asia/Singapore">
+        <h2>Singapore</h2>
+        <output>00:00:00</output>
+    </div>
+
+        <script>
+            function updateClocks() {
+                const clockElements = document.querySelectorAll('div[data-timezone]');
+                clockElements.forEach(clockElement => {
+                    const timezone = clockElement.getAttribute('data-timezone');
+                    const now = new Date();
+                    const options = { timeZone: timezone, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12:true};
+                    const timeString = now.toLocaleTimeString('en-US', options);
+                    clockElement.querySelector('output').textContent = timeString;
+                });
+            }
+
+            setInterval(updateClocks, 1000);
+            updateClocks(); // Initial call to set the clocks immediately
+        </script>
 
     <nav class="main-nav">
         <a href="Cataction.html" class="logo-link">
@@ -336,10 +346,6 @@
             const ctx = canvas.getContext('2d');
         </script>
         <p>&copy; bobo ffa - All Cats Reserved</p>
-    </footer>
-    <script src="Cataction.js"></script>
-</body>
-</html>
     </footer>
     <script src="Cataction.js"></script>
 </body>
