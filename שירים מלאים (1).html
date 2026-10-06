@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שירים מלאים - בובו פפה</title>
+    <link rel="stylesheet" href="שירים מלאים.css">
+    <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+</head>
+<body>
+        <div class=" clock container">
+        <time id="currentTime"></time>
+    </div class= "Clock container">
+    Current Time: <span id="live-clock"></span>
+    <span id="hrs00">00</span>
+    <span>:</span>
+    <span id="min00">00</span>
+    <span>:</span>
+    <span id="sec00">00</span>
+    current date: <span id="live-date"></span>
+    <span>|</span>
+    <span id="date00">00/00/0000</span>
+    <span>|</span>
+    <span id="month00">חודש</span>
+    <span>|</span>
+    <span id="year00">שנה</span>
+    </div>
+    <script>
+        let hrs = document.getElementById("hrs00");
+        let min = document.getElementById("min00");
+        let sec = document.getElementById("sec00");
+        let date = document.getElementById("date00");
+        let month = document.getElementById("month00");
+        let year = document.getElementById("year00");
+
+        function updateClock() {
+            const currentTime = new Date();
+            hrs.innerHTML = currentTime.getHours().toString().padStart(2, '0');
+            min.innerHTML = currentTime.getMinutes().toString().padStart(2, '0');
+            sec.innerHTML = currentTime.getSeconds().toString().padStart(2, '0');
+        }
+
+        function updateDate() {
+            const currentTime = new Date();
+            date.innerHTML = currentTime.getDate().toString().padStart(2, '0');
+            month.innerHTML = (currentTime.getMonth() + 1).toString().padStart(2, '0');
+            year.innerHTML = currentTime.getFullYear();
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+        updateDate();
+        setInterval(updateDate, 1000);
+    </script>
+    <input type="date" id="currentdate">
+    <script>
+        document.getElementById(currentDate).valueAsDate = new Date
+    </script>
+
+                <div data-timezone="Europe/Zurich">
+                <h2>Zurich</h2>
+        <output>00:00:00</output>
+            </div>
+
+                        <div data-timezone="Europe/Paris">
+                <h2>Paris</h2>
+        <output>00:00:00</output>
+            </div>
+
+                        <div data-timezone="Europe/Madrid">
+                <h2>Madrid</h2>
+        <output>00:00:00</output>
+            </div>
+
+                                    <div data-timezone="Europe/Berlin">
+                <h2>Berlin</h2>
+        <output>00:00:00</output>
+            </div>
+
+                        <div data-timezone="Europe/Rome">
+                <h2>Rome</h2>
+        <output>00:00:00</output>
+            </div>
+
+            <div data-timezone="Asia/Jerusalem">
+                <h2>Jerusalem</h2>
+                <output>00:00:00</output>
+            </div>
+
+            <div data-timezone="Europe/London">
+                <h2>London</h2>
+                <output>00:00:00</output>
+            </div>
+
+<div data-timezone="Asia/Dubai">
+    <h2>Dubai</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Europe/Sofia">
+    <h2>Sofia</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Asia/Tokyo">
+    <h2>Tokyo</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Asia/Bangkok">
+    <h2>Bangkok</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Europe/Kyiv">
+    <h2>Kyiv</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Europe/Warsaw">
+    <h2>Warsaw</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="Asia/Singapore">
+    <h2>Singapore</h2>
+    <output>00:00:00</output>
+</div>
+
+<div data-timezone="America/Toronto">
+    <h2>Toronto</h2>
+    <output>00:00:00</output>
+</div>
+
+    <header>
+        <div class="container">
+            <img src="Screenshot 2026-03-14 135433.png" alt="לוגו" class="logo">
+            <h1>שירים מלאים</h1>
+            <p>כל השירים האהובים במקום אחד</p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="Cataction.html" class="logo-link">
+            <img src="Screenshot 2026-03-14 135433.png" alt="לוגו" class="logo-img">
+        </a>
+        <a href="Cataction.html" class="nav-link">חזור לדף הבית</a>
+        <a href="שירים מלאים.html" class="active">שירים מלאים</a>
+        <a href="סרטים.html">סרטים</a>
+        <a href="מופעים.html">מופעים</a>
+        <a href="שיתופי פעולה.html">שיתופי פעולה</a>
+    </nav>
+
+    <main>
+        <div class="playlist-container">
+            <h2>הפלייליסט שלנו</h2>
+            <div class="song-grid">
+                <!-- Song Card 1 -->
+                <div class="song-card">
+                    <img src="Album.png" alt="שיר 1" class="song-cover">
+                    <h3>All of the ways</h3>
+                    <p>BOBO FFA</p>
+                    <button class="play-button">נגן</button>
+                    <audio id="audio1" src="All of the ways.mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <!-- Song Card 2 -->
+                <div class="song-card">
+                    <img src="Album.png" alt="שיר 2" class="song-cover">
+                    <h3>Music for Tourism</h3>
+                    <p>BOBO FFA</p>
+                    <button class="play-button">נגן</button>
+                    <audio id="audio2" src="Music for Tourism.mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                            <!-- Song Card 3 -->
+            <div class="song-card">
+                <img src="Album.png" alt="שיר 3" class="song-cover">
+                <h3>Soundtrack Cats</h3>
+                <p>BOBO FFA</p>
+                <button class="play-button">נגן</button>
+                <audio id="audio3" src="Soundtrack Cats.mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+                            <!-- Song Card 4 -->
+        <div class="song-card">
+            <h2>Music for Cooking</h2>
+            <img src="Album.png" alt="שיר 4" class="song-cover">
+            <p>BOBO FFA</p>
+            <button class="play-button">נגן</button>
+            <audio id="audio4" src="Music_for_Cooking.mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+            </div>
+        </div>
+    </main>
+
+    <!--playlist-->
+    <div class="playlist-wrapper">
+                <!-- 
+        Replace YOUR_PLAYLIST_ID below with your actual ID.
+        Example: https://youtube.com 
+        -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/watch?v=0cBPET8yojE&list=PLG5S1cXoV-2HbSsULpHuwQKLvvD6hkRev"
+        title="YouTube music playlist" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    </div>
+        <!--playlist-->
+    <div class="playlist-wrapper">
+                <!-- 
+        Replace YOUR_PLAYLIST_ID below with your actual ID.
+        Example: https://youtube.com 
+        -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/watch?v=1qKXCP6bywQ&list=PLG5S1cXoV-2HXFKe2--SZisx4HLd0li_Q"
+        title="YouTube music playlist" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    </div>
+            <!--playlist-->
+    <div class="playlist-wrapper">
+                <!-- 
+        Replace YOUR_PLAYLIST_ID below with your actual ID.
+        Example: https://youtube.com 
+        -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/playlist?list=PLG5S1cXoV-2G_Zd8lybU9Tf3xBkb_-iZR"
+        title="YouTube music playlist" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    </div>
+                <!--playlist-->
+    <div class="playlist-wrapper">
+                <!-- 
+        Replace YOUR_PLAYLIST_ID below with your actual ID.
+        Example: https://youtube.com 
+        -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/playlist?list=PLG5S1cXoV-2FEhcZbHz8STAumYk3jA0-v"
+        title="YouTube music playlist" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    </div>
+                <!--playlist-->
+    <div class="playlist-wrapper">
+                <!-- 
+        Replace YOUR_PLAYLIST_ID below with your actual ID.
+        Example: https://youtube.com 
+        -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/playlist?list=PLG5S1cXoV-2HPnsTyWqtx7CCPFlB3Pd5a"
+        title="YouTube music playlist" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Bobo FFA - All Cats Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.play-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const audio = button.parentElement.querySelector('audio');
+                
+                if (audio.paused) {
+                    // Stop any other song that might be playing
+                    document.querySelectorAll('audio').forEach(a => {
+                        a.pause();
+                        a.parentElement.querySelector('.play-button').textContent = 'נגן';
+                    });
+
+                    audio.play();
+                    button.textContent = 'השהה'; // Change to "Pause"
+                } else {
+                    audio.pause();
+                    button.textContent = 'נגן'; // Change back to "Play"
+                }
+            });
+        });
+    </script>    
+    <script src="Cataction.js"></script>
+</body>
+</html>

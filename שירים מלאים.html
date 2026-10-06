@@ -57,80 +57,113 @@
         document.getElementById(currentDate).valueAsDate = new Date
     </script>
 
-                <div data-timezone="Europe/Zurich">
-                <h2>Zurich</h2>
-        <output>00:00:00</output>
-            </div>
-
-                        <div data-timezone="Europe/Paris">
-                <h2>Paris</h2>
-        <output>00:00:00</output>
-            </div>
-
-                        <div data-timezone="Europe/Madrid">
-                <h2>Madrid</h2>
-        <output>00:00:00</output>
-            </div>
-
-                                    <div data-timezone="Europe/Berlin">
-                <h2>Berlin</h2>
-        <output>00:00:00</output>
-            </div>
-
-                        <div data-timezone="Europe/Rome">
-                <h2>Rome</h2>
-        <output>00:00:00</output>
-            </div>
-
-            <div data-timezone="Asia/Jerusalem">
-                <h2>Jerusalem</h2>
+</head>
+<div class="timezone-hero"  style="position: relative; margin: 1rem 0; padding: 2rem 1rem; border-radius: 18px; overflow: hidden; background-image: url('Screenshot\ 2026-03-14\ 135433.png'); background-size: cover; background-position: center; background-repeat: no-repeat; box-shadow: 0 12px 30px rgba(0,0,0,0.2);">
+        <div style="position: absolute; inset: 0; background: rgba(12, 22, 33, 0.45);"></div>
+        <div style="position: relative; z-index: 1; text-align: center; color: #fff;">
+            <h1 style="margin: 0 0 0.5rem; font-size: 2rem;">World Clocks</h1>
+            <p style="margin: 0; font-size: 1.1rem;">Check the current time in different cities around the world.</p>
+        </div>
+        <div data-timezone="Asia/Tel_Aviv" style="position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+            <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Tel Aviv</h2>
+            <output>00:00:00</output>
+        </div>
+        <div style="position: relative; z-index: 1; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
+            <div data-timezone="Europe/Zurich" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Zurich</h2>
                 <output>00:00:00</output>
             </div>
-
-            <div data-timezone="Europe/London">
-                <h2>London</h2>
+            <div data-timezone="Europe/Paris" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Paris</h2>
                 <output>00:00:00</output>
             </div>
-
-<div data-timezone="Asia/Dubai">
-    <h2>Dubai</h2>
-    <output>00:00:00</output>
-</div>
-
-<div data-timezone="Europe/Sofia">
-    <h2>Sofia</h2>
-    <output>00:00:00</output>
-</div>
-
-<div data-timezone="Asia/Tokyo">
-    <h2>Tokyo</h2>
-    <output>00:00:00</output>
-</div>
-
-<div data-timezone="Asia/Bangkok">
-    <h2>Bangkok</h2>
-    <output>00:00:00</output>
-</div>
-
-<div data-timezone="Europe/Kyiv">
-    <h2>Kyiv</h2>
-    <output>00:00:00</output>
-</div>
-
-<div data-timezone="Europe/Warsaw">
-    <h2>Warsaw</h2>
-    <output>00:00:00</output>
-</div>
-
-<div data-timezone="Asia/Singapore">
-    <h2>Singapore</h2>
-    <output>00:00:00</output>
-</div>
-
-<div data-timezone="America/Toronto">
-    <h2>Toronto</h2>
-    <output>00:00:00</output>
-</div>
+            <div data-timezone="Europe/Madrid" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Madrid</h2>
+                <output>00:00:00</output>
+            </div>
+            <div data-timezone="Europe/Berlin" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Berlin</h2>
+                <output>00:00:00</output>
+            </div>
+            <div data-timezone="Europe/Rome" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Rome</h2>
+                <output>00:00:00</output>
+            </div>
+            <div data-timezone="America/New_York" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">New York</h2>
+                <output>00:00:00</output>
+            </div>
+            <div data-timezone="America/Los_Angeles" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Los Angeles</h2>
+                <output>00:00:00</output>
+                </div>
+                <div data-timezone="Asia/Tokyo" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                    <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Tokyo</h2>
+                    <output>00:00:00</output>
+                </div>
+                <div data-timezone="Australia/Sydney" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                    <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Sydney</h2>
+                    <output>00:00:00</output>
+                    </div>
+                    <div data-timezone="Asia/Dubai" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                        <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Dubai</h2>
+                        <output>00:00:00</output>
+                        </div>
+                        <div data-timezone="Europe/London" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                            <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">London</h2>
+                            <output>00:00:00</output>
+                            </div>
+                            <div data-timezone="Asia/Jerusalem" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                                <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Jerusalem</h2>
+                                <output>00:00:00</output>
+            </div>
+            <div data-timezone="Europe/Sofia" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Sofia</h2>
+                <output>00:00:00</output>
+                </div>
+                <div data-timezone="Europe/Kyiv" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                    <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Kyiv</h2>
+                    <output>00:00:00</output>
+                    </div>
+                    <div data-timezone="Europe/Warsaw" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                        <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Warsaw</h2>
+                        <output>00:00:00</output>
+                        </div>
+                        <div data-timezone="Asia/Singapore" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                            <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Singapore</h2>
+                            <output>00:00:00</output>
+                            </div>
+                            <div data-timezone="America/Toronto" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                                <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Toronto</h2>
+                                <output>00:00:00</output>
+                                </div>
+                                <div data-timezone="Europe/Prague" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                                    <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Prague</h2>
+                                    <output>00:00:00</output>\
+                                    </div>
+                                    <div data-timezone="Europe/Oslo" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                                        <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Oslo</h2>
+                                        <output>00:00:00</output>
+                                        </div>
+                                        <div data-timezone="Africa/Cairo" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                                            <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Cairo</h2>
+                                            <output>00:00:00</output>
+                                            </div>
+                                            <div data-timezone="asia/manila" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                                                <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Manila</h2>
+                                                <output>00:00:00</output>
+                                                </div>
+                                                <div data-timezone="Asia/Bangkok" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                                                    <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Bangkok</h2>
+                                                    <output>00:00:00</output>
+                                                    </div>
+                                                    <div data-timezone="Europe/Oslo" style="background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.75rem 1rem; color: #fff; backdrop-filter: blur(2px);">
+                                                        <h2 style="margin: 0 0 0.35rem; font-size: 1.05rem;">Lisbon</h2>
+                                                        <output>00:00:00</output>
+                                                        </div>
+        </div>
+    </div>
+<body>
 
     <header>
         <div class="container">
@@ -279,5 +312,4 @@
     </script>    
     <script src="Cataction.js"></script>
 </body>
-</html>
 </html>
