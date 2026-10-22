@@ -7,57 +7,7 @@
     <link rel="stylesheet" href="שירים מלאים.css">
     <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
 </head>
-<body>
-        <div class=" clock container">
-        <time id="currentTime"></time>
-    </div class= "Clock container">
-    Current Time: <span id="live-clock"></span>
-    <span id="hrs00">00</span>
-    <span>:</span>
-    <span id="min00">00</span>
-    <span>:</span>
-    <span id="sec00">00</span>
-    current date: <span id="live-date"></span>
-    <span>|</span>
-    <span id="date00">00/00/0000</span>
-    <span>|</span>
-    <span id="month00">חודש</span>
-    <span>|</span>
-    <span id="year00">שנה</span>
-    </div>
-    <script>
-        let hrs = document.getElementById("hrs00");
-        let min = document.getElementById("min00");
-        let sec = document.getElementById("sec00");
-        let date = document.getElementById("date00");
-        let month = document.getElementById("month00");
-        let year = document.getElementById("year00");
-
-        function updateClock() {
-            const currentTime = new Date();
-            hrs.innerHTML = currentTime.getHours().toString().padStart(2, '0');
-            min.innerHTML = currentTime.getMinutes().toString().padStart(2, '0');
-            sec.innerHTML = currentTime.getSeconds().toString().padStart(2, '0');
-        }
-
-        function updateDate() {
-            const currentTime = new Date();
-            date.innerHTML = currentTime.getDate().toString().padStart(2, '0');
-            month.innerHTML = (currentTime.getMonth() + 1).toString().padStart(2, '0');
-            year.innerHTML = currentTime.getFullYear();
-        }
-
-        updateClock();
-        setInterval(updateClock, 1000);
-        updateDate();
-        setInterval(updateDate, 1000);
-    </script>
-    <input type="date" id="currentdate">
-    <script>
-        document.getElementById(currentDate).valueAsDate = new Date
-    </script>
-
-</head>
+<body></head>
 <div class="timezone-hero"  style="position: relative; margin: 1rem 0; padding: 2rem 1rem; border-radius: 18px; overflow: hidden; background-image: url('Screenshot\ 2026-03-14\ 135433.png'); background-size: cover; background-position: center; background-repeat: no-repeat; box-shadow: 0 12px 30px rgba(0,0,0,0.2);">
         <div style="position: absolute; inset: 0; background: rgba(12, 22, 33, 0.45);"></div>
         <div style="position: relative; z-index: 1; text-align: center; color: #fff;">
@@ -164,6 +114,22 @@
         </div>
     </div>
 <body>
+
+        <script>
+            function updateClocks() {
+                const clockElements = document.querySelectorAll('div[data-timezone]');
+                clockElements.forEach(clockElement => {
+                    const timezone = clockElement.getAttribute('data-timezone');
+                    const now = new Date();
+                    const options = { timeZone: timezone, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12:true};
+                    const timeString = now.toLocaleTimeString('en-US', options);
+                    clockElement.querySelector('output').textContent = timeString;
+                });
+            }
+
+            setInterval(updateClocks, 1000);
+            updateClocks(); // Initial call to set the clocks immediately
+        </script>
 
     <header>
         <div class="container">
